@@ -14,6 +14,10 @@
 		749CFAF02A3DBA8000380161 /* FoodieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFAEF2A3DBA8000380161 /* FoodieAppTests.swift */; };
 		749CFAFA2A3DBA8000380161 /* FoodieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFAF92A3DBA8000380161 /* FoodieAppUITests.swift */; };
 		749CFAFC2A3DBA8000380161 /* FoodieAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFAFB2A3DBA8000380161 /* FoodieAppUITestsLaunchTests.swift */; };
+		749CFB0C2A3DD24B00380161 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB0B2A3DD24B00380161 /* OnboardingButton.swift */; };
+		749CFB102A3DD3A700380161 /* OnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB0F2A3DD3A700380161 /* OnboardingInfoView.swift */; };
+		749CFB122A3DDC5300380161 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB112A3DDC5300380161 /* OnboardingView.swift */; };
+		749CFB142A3DDC9700380161 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB132A3DDC9700380161 /* OnboardingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		749CFAF52A3DBA8000380161 /* FoodieAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodieAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		749CFAF92A3DBA8000380161 /* FoodieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieAppUITests.swift; sourceTree = "<group>"; };
 		749CFAFB2A3DBA8000380161 /* FoodieAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		749CFB0B2A3DD24B00380161 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
+		749CFB0F2A3DD3A700380161 /* OnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoView.swift; sourceTree = "<group>"; };
+		749CFB112A3DDC5300380161 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		749CFB132A3DDC9700380161 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,8 @@
 		749CFADD2A3DBA7D00380161 /* FoodieApp */ = {
 			isa = PBXGroup;
 			children = (
+				749CFB0D2A3DD39400380161 /* Views */,
+				749CFB082A3DD22A00380161 /* CustomItems */,
 				749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */,
 				749CFAE02A3DBA7D00380161 /* ContentView.swift */,
 				749CFAE22A3DBA7F00380161 /* Assets.xcassets */,
@@ -125,6 +135,32 @@
 				749CFAFB2A3DBA8000380161 /* FoodieAppUITestsLaunchTests.swift */,
 			);
 			path = FoodieAppUITests;
+			sourceTree = "<group>";
+		};
+		749CFB082A3DD22A00380161 /* CustomItems */ = {
+			isa = PBXGroup;
+			children = (
+				749CFB0B2A3DD24B00380161 /* OnboardingButton.swift */,
+			);
+			path = CustomItems;
+			sourceTree = "<group>";
+		};
+		749CFB0D2A3DD39400380161 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				749CFB0E2A3DD39A00380161 /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		749CFB0E2A3DD39A00380161 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				749CFB0F2A3DD3A700380161 /* OnboardingInfoView.swift */,
+				749CFB112A3DDC5300380161 /* OnboardingView.swift */,
+				749CFB132A3DDC9700380161 /* OnboardingManager.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				749CFB142A3DDC9700380161 /* OnboardingManager.swift in Sources */,
 				749CFAE12A3DBA7D00380161 /* ContentView.swift in Sources */,
+				749CFB102A3DD3A700380161 /* OnboardingInfoView.swift in Sources */,
+				749CFB0C2A3DD24B00380161 /* OnboardingButton.swift in Sources */,
+				749CFB122A3DDC5300380161 /* OnboardingView.swift in Sources */,
 				749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
