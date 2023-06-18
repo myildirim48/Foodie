@@ -17,9 +17,9 @@ struct OnboardingButton: View {
             double += 0.25
             action()
         } label: {
-           Image(systemName: "arrow.right")
+           Image("arrow")
                 .resizable()
-                .frame(width: 35, height: 30)
+                .frame(width: 35, height: 20)
                 .foregroundColor(.white)
                 .bold()
                 .rotationEffect(.degrees(45))
@@ -46,8 +46,10 @@ struct OnboardingButton: View {
     }
 }
 
-//struct OnboardingButton_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OnboardingButton()
-//    }
-//}
+struct OnboardingButton_Previews: PreviewProvider {
+    static var previews: some View {
+        OnboardingButton {
+            
+        }
+    }
+}

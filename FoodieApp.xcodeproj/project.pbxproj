@@ -30,6 +30,7 @@
 		749CFB442A3EFB9800380161 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749CFB322A3EFB9800380161 /* Poppins-SemiBold.ttf */; };
 		749CFB452A3EFB9800380161 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749CFB332A3EFB9800380161 /* Poppins-Thin.ttf */; };
 		749CFB482A3EFFDE00380161 /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB472A3EFFDE00380161 /* SocialMediaButton.swift */; };
+		749CFB4A2A3F53D500380161 /* RegisterationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB492A3F53D500380161 /* RegisterationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		749CFB332A3EFB9800380161 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		749CFB462A3EFBE700380161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		749CFB472A3EFFDE00380161 /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
+		749CFB492A3F53D500380161 /* RegisterationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				749CFB162A3E3A1300380161 /* LoginView.swift */,
+				749CFB492A3F53D500380161 /* RegisterationView.swift */,
 				749CFB182A3E3EF000380161 /* SessionManager.swift */,
 			);
 			path = Authentication;
@@ -363,6 +366,7 @@
 				749CFB122A3DDC5300380161 /* OnboardingView.swift in Sources */,
 				749CFB192A3E3EF000380161 /* SessionManager.swift in Sources */,
 				749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */,
+				749CFB4A2A3F53D500380161 /* RegisterationView.swift in Sources */,
 				749CFB1E2A3EF78C00380161 /* CustomTextField.swift in Sources */,
 				749CFB482A3EFFDE00380161 /* SocialMediaButton.swift in Sources */,
 			);

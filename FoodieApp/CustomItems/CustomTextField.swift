@@ -8,22 +8,36 @@
 import SwiftUI
 
 struct CustomTextField: View {
+    
+enum ImageName: String {
+    case email,password,name
+        
+        var string: String {
+            switch self {
+            case .email: return "IconsEmail"
+            case .name: return "IconsPerson"
+            case .password: return "IconsLock"
+            }
+        }
+    }
+    
     @Binding var text: String
-    let placeholder: Text
-    let imgName: String
+    let placeholder: String
+    let imgName: ImageName
     var isSecure: Bool = false
     
     var body: some View {
         ZStack(alignment: .leading) {
             if text.isEmpty {
-                placeholder
-                    
+                
+                Text(placeholder)
                     .font(.system(size: 18, weight: .regular))
+                    .foregroundColor(.secondary)
                     .padding(.leading, 30)
                     
             }
             HStack {
-                Image(imgName)
+                Image(imgName.string)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20, height: 20)
@@ -47,6 +61,6 @@ struct CustomTextField: View {
 
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField(text: .constant(""), placeholder: Text("Email Address"), imgName: "IconsLock")
+        CustomTextField(text: .constant(""), placeholder: "Email Address", imgName: .password)
     }
 }

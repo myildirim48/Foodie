@@ -11,37 +11,39 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     var body: some View {
+        NavigationView {
+
         VStack(alignment: .leading) {
-//            Header
+            //            Header
             
-                Text("Log In to continnue")
-                    .font(.system(size: 30, weight: .bold))
-                    .padding(.bottom, 45)
+            Text("Log In to continnue")
+                .font(.system(size: 30, weight: .bold))
+                .padding(.bottom, 45)
             
-                
-//            Email password Fields
+            
+            //            Email password Fields
             CustomTextField(text: $email,
-                            placeholder: Text("Email Address"),
-                            imgName: "IconsEmail")
+                            placeholder: "Email Address",
+                            imgName: .email)
             .padding(.bottom)
-                
-            CustomTextField(text: $password, placeholder: Text("Password"), imgName: "IconsLock", isSecure: true)
-                
-//            Forgot password link test
+            
+            CustomTextField(text: $password, placeholder: "Password", imgName: .password, isSecure: true)
+            
+            //            Forgot password link test
             HStack {
                 Spacer()
                 
                 NavigationLink {
-//                    ResetPasswordView(email: $email)
+                    //                    ResetPasswordView(email: $email)
                 } label: {
                     Text("Forgot password?")
                         .font(.system(size: 14, weight: .semibold))
                         .foregroundColor(.black)
                         .padding([.top,.bottom])
                 }
-
+                
             }
-//            Login Button
+            //            Login Button
             
             Button {
                 
@@ -54,7 +56,7 @@ struct LoginView: View {
                     .cornerRadius(10)
             }
             
-//            Divider
+            //            Divider
             
             HStack {
                 Rectangle()
@@ -67,7 +69,7 @@ struct LoginView: View {
                     .foregroundColor(.secondary.opacity(0.5))
             }.padding(.vertical,36)
             
-//            Social Media Connect
+            //            Social Media Connect
             HStack(spacing: 20) {
                 SocialMediaButton(action: {
                     
@@ -80,19 +82,22 @@ struct LoginView: View {
                 }, imageName: .apple)
             }
             
-//            Sign Up button
+            //            Sign Up button
             
             
-                Button {
-                    //TODO: - Go to sign in page
-
-                } label: {
-                    Text("Don't have an account?")
-                    +
-                    Text(" Sign Up").bold()
-                }.padding(32)
-
+            NavigationLink {
+                RegisterationView()
+            } label: {
+                Text("Don't have an account?")
+                +
+                Text(" Sign Up").bold()
+                
+            }
+            .foregroundColor(.black)
+            .padding(32)
+            
         }.padding(.horizontal,32)
+        }.navigationBarHidden(true)
     }
 }
 
