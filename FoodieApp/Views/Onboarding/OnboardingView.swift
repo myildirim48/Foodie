@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingView: View {
     @StateObject private var manager = OnboardingManager()
     @State private var currentTab = 0
+    @State var showLogin : (Bool) -> Void
     
     var body: some View {
         ZStack {
@@ -27,18 +28,20 @@ struct OnboardingView: View {
                         }
                     }
 
-                }.overlay(alignment: .bottom, content: {
+                }
+                .overlay(alignment: .bottom, content: {
                     OnboardingButton(double: 0.0) {
-                        currentTab += 1
+                        currentTab <= 2 ? currentTab += 1 : showLogin(true)
                     }
                 })
+
                 .edgesIgnoringSafeArea(.top)
                 .animation(.easeInOut, value: currentTab)
                 .indexViewStyle(.page(backgroundDisplayMode: .interactive))
                   .tabViewStyle(PageTabViewStyle())
             }
         }.onAppear {
-            manager.load()
+                manager.load()
         }
         
     }
@@ -78,6 +81,8 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingView { _ in
+            
+        }
     }
 }

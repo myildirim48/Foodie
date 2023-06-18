@@ -18,6 +18,18 @@
 		749CFB102A3DD3A700380161 /* OnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB0F2A3DD3A700380161 /* OnboardingInfoView.swift */; };
 		749CFB122A3DDC5300380161 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB112A3DDC5300380161 /* OnboardingView.swift */; };
 		749CFB142A3DDC9700380161 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB132A3DDC9700380161 /* OnboardingManager.swift */; };
+		749CFB172A3E3A1300380161 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB162A3E3A1300380161 /* LoginView.swift */; };
+		749CFB192A3E3EF000380161 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB182A3E3EF000380161 /* SessionManager.swift */; };
+		749CFB1E2A3EF78C00380161 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB1D2A3EF78C00380161 /* CustomTextField.swift */; };
+		749CFB3C2A3EFB9800380161 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749CFB2A2A3EFB9700380161 /* Poppins-Light.ttf */; };
+		749CFB3D2A3EFB9800380161 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749CFB2B2A3EFB9700380161 /* Poppins-Bold.ttf */; };
+		749CFB3F2A3EFB9800380161 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749CFB2D2A3EFB9700380161 /* Poppins-Black.ttf */; };
+		749CFB412A3EFB9800380161 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749CFB2F2A3EFB9700380161 /* Poppins-Medium.ttf */; };
+		749CFB422A3EFB9800380161 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749CFB302A3EFB9800380161 /* Poppins-ExtraLight.ttf */; };
+		749CFB432A3EFB9800380161 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749CFB312A3EFB9800380161 /* Poppins-Regular.ttf */; };
+		749CFB442A3EFB9800380161 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749CFB322A3EFB9800380161 /* Poppins-SemiBold.ttf */; };
+		749CFB452A3EFB9800380161 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749CFB332A3EFB9800380161 /* Poppins-Thin.ttf */; };
+		749CFB482A3EFFDE00380161 /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB472A3EFFDE00380161 /* SocialMediaButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +64,19 @@
 		749CFB0F2A3DD3A700380161 /* OnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoView.swift; sourceTree = "<group>"; };
 		749CFB112A3DDC5300380161 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		749CFB132A3DDC9700380161 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
+		749CFB162A3E3A1300380161 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		749CFB182A3E3EF000380161 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		749CFB1D2A3EF78C00380161 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		749CFB2A2A3EFB9700380161 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		749CFB2B2A3EFB9700380161 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		749CFB2D2A3EFB9700380161 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		749CFB2F2A3EFB9700380161 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		749CFB302A3EFB9800380161 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		749CFB312A3EFB9800380161 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		749CFB322A3EFB9800380161 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		749CFB332A3EFB9800380161 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		749CFB462A3EFBE700380161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		749CFB472A3EFFDE00380161 /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +127,8 @@
 		749CFADD2A3DBA7D00380161 /* FoodieApp */ = {
 			isa = PBXGroup;
 			children = (
+				749CFB462A3EFBE700380161 /* Info.plist */,
+				749CFB1F2A3EFB4600380161 /* Font */,
 				749CFB0D2A3DD39400380161 /* Views */,
 				749CFB082A3DD22A00380161 /* CustomItems */,
 				749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */,
@@ -141,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				749CFB0B2A3DD24B00380161 /* OnboardingButton.swift */,
+				749CFB1D2A3EF78C00380161 /* CustomTextField.swift */,
+				749CFB472A3EFFDE00380161 /* SocialMediaButton.swift */,
 			);
 			path = CustomItems;
 			sourceTree = "<group>";
@@ -148,6 +177,7 @@
 		749CFB0D2A3DD39400380161 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				749CFB152A3E3A0800380161 /* Authentication */,
 				749CFB0E2A3DD39A00380161 /* Onboarding */,
 			);
 			path = Views;
@@ -156,11 +186,35 @@
 		749CFB0E2A3DD39A00380161 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				749CFB0F2A3DD3A700380161 /* OnboardingInfoView.swift */,
 				749CFB112A3DDC5300380161 /* OnboardingView.swift */,
+				749CFB0F2A3DD3A700380161 /* OnboardingInfoView.swift */,
 				749CFB132A3DDC9700380161 /* OnboardingManager.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		749CFB152A3E3A0800380161 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				749CFB162A3E3A1300380161 /* LoginView.swift */,
+				749CFB182A3E3EF000380161 /* SessionManager.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		749CFB1F2A3EFB4600380161 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				749CFB2D2A3EFB9700380161 /* Poppins-Black.ttf */,
+				749CFB2B2A3EFB9700380161 /* Poppins-Bold.ttf */,
+				749CFB302A3EFB9800380161 /* Poppins-ExtraLight.ttf */,
+				749CFB2A2A3EFB9700380161 /* Poppins-Light.ttf */,
+				749CFB2F2A3EFB9700380161 /* Poppins-Medium.ttf */,
+				749CFB312A3EFB9800380161 /* Poppins-Regular.ttf */,
+				749CFB322A3EFB9800380161 /* Poppins-SemiBold.ttf */,
+				749CFB332A3EFB9800380161 /* Poppins-Thin.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +321,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				749CFB422A3EFB9800380161 /* Poppins-ExtraLight.ttf in Resources */,
+				749CFB432A3EFB9800380161 /* Poppins-Regular.ttf in Resources */,
+				749CFB442A3EFB9800380161 /* Poppins-SemiBold.ttf in Resources */,
+				749CFB412A3EFB9800380161 /* Poppins-Medium.ttf in Resources */,
+				749CFB452A3EFB9800380161 /* Poppins-Thin.ttf in Resources */,
 				749CFAE62A3DBA7F00380161 /* Preview Assets.xcassets in Resources */,
 				749CFAE32A3DBA7F00380161 /* Assets.xcassets in Resources */,
+				749CFB3D2A3EFB9800380161 /* Poppins-Bold.ttf in Resources */,
+				749CFB3F2A3EFB9800380161 /* Poppins-Black.ttf in Resources */,
+				749CFB3C2A3EFB9800380161 /* Poppins-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,11 +356,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				749CFB142A3DDC9700380161 /* OnboardingManager.swift in Sources */,
+				749CFB172A3E3A1300380161 /* LoginView.swift in Sources */,
 				749CFAE12A3DBA7D00380161 /* ContentView.swift in Sources */,
 				749CFB102A3DD3A700380161 /* OnboardingInfoView.swift in Sources */,
 				749CFB0C2A3DD24B00380161 /* OnboardingButton.swift in Sources */,
 				749CFB122A3DDC5300380161 /* OnboardingView.swift in Sources */,
+				749CFB192A3E3EF000380161 /* SessionManager.swift in Sources */,
 				749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */,
+				749CFB1E2A3EF78C00380161 /* CustomTextField.swift in Sources */,
+				749CFB482A3EFFDE00380161 /* SocialMediaButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +526,7 @@
 				DEVELOPMENT_TEAM = 3JFC7AD7WA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoodieApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -489,6 +556,7 @@
 				DEVELOPMENT_TEAM = 3JFC7AD7WA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoodieApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -6,14 +6,33 @@
 //
 
 import SwiftUI
-
-
-
 struct ContentView: View {
-    @State private var currentStep = 0
+    @EnvironmentObject var session: SessionManager
     var body: some View {
-        OnboardingView()
-        
+        ZStack {
+            switch session.currentState {
+            case .loggedIn:
+                LoginView()
+                    .transition(.opacity)
+            case .loggedOut:
+                LoginView()
+                    .transition(.opacity)
+            case .onboarding:
+                OnboardingView { showLogin in
+                    if showLogin {
+                        session.completeOnboarding()
+                    }
+                }
+                .transition(.asymmetric(insertion: .opacity,
+                                        removal: .move(edge: .leading)))
+            default:
+                Color.white.ignoresSafeArea()
+            }
+        }
+        .animation(.easeInOut, value: session.currentState)
+        .onAppear {
+            session.configureCurrentState()
+        }
     }
 }
 
