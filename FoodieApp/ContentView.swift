@@ -41,7 +41,6 @@ struct ContentView: View {
         .animation(.easeInOut, value: session.currentState)
         .onAppear {
             session.configureCurrentState()
-            print("DEBUG: session currentstate", session.currentState)
         }
     }
 }

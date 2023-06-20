@@ -27,14 +27,12 @@ final class SessionManager: ObservableObject {
     func signIn() {
         UserDefaults.standard.set(true, forKey: UserDefaultKeys.userHasBeenLoggedInOrSıgnedUp)
         currentState = .loggedIn
-        print("Sıgn in",UserDefaults.standard.bool(forKey: UserDefaultKeys.userHasBeenLoggedInOrSıgnedUp))
     }
     
     func logOut() {
         try? Auth.auth().signOut()
         UserDefaults.standard.set(false, forKey: UserDefaultKeys.userHasBeenLoggedInOrSıgnedUp)
         currentState = .loggedOut
-        print("Log out",UserDefaults.standard.bool(forKey: UserDefaultKeys.userHasBeenLoggedInOrSıgnedUp))
     }
     
     func completeOnboarding() {
