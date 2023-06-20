@@ -1,0 +1,57 @@
+//
+//  SessionManager.swift
+//  FoodieApp
+//
+//  Created by YILDIRIM on 17.06.2023.
+//
+
+import Foundation
+import FirebaseAuth
+
+final class SessionManager: ObservableObject {
+    
+    enum UserDefaultKeys {
+        static let hasSeenOnboarding = "hasSeenOnboarding"
+        static let userHasBeenLoggedInOrSıgnedUp = "userHasBeenLoggedInOrSıgnedUp"
+    }
+    
+    enum CurrentState {
+        case loggedIn
+        case loggedOut
+        case onboarding
+        case signUp
+    }
+    
+    @Published private(set) var currentState: CurrentState?
+    
+    func signIn() {
+        UserDefaults.standard.set(true, forKey: UserDefaultKeys.userHasBeenLoggedInOrSıgnedUp)
+        currentState = .loggedIn
+        print("Sıgn in",UserDefaults.standard.bool(forKey: UserDefaultKeys.userHasBeenLoggedInOrSıgnedUp))
+    }
+    
+    func logOut() {
+        try? Auth.auth().signOut()
+        UserDefaults.standard.set(false, forKey: UserDefaultKeys.userHasBeenLoggedInOrSıgnedUp)
+        currentState = .loggedOut
+        print("Log out",UserDefaults.standard.bool(forKey: UserDefaultKeys.userHasBeenLoggedInOrSıgnedUp))
+    }
+    
+    func completeOnboarding() {
+        currentState = .signUp
+        UserDefaults.standard.set(true, forKey: UserDefaultKeys.hasSeenOnboarding)
+    }
+    
+    func configureCurrentState() {
+        let hasCompletedOnboarding = UserDefaults.standard.bool(forKey: UserDefaultKeys.hasSeenOnboarding)
+        let hasCompletedLogin = UserDefaults.standard.bool(forKey: UserDefaultKeys.userHasBeenLoggedInOrSıgnedUp)
+
+        if hasCompletedOnboarding {
+            currentState = .signUp
+        } else if hasCompletedLogin {
+            currentState = .loggedIn
+        } else {
+            currentState = .loggedOut
+        }
+    }
+}

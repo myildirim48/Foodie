@@ -8,15 +8,19 @@
 import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var session: SessionManager
+    @StateObject var authManager = AuthenticationViewModel(authService: AuthenticationManager())
     var body: some View {
         ZStack {
             switch session.currentState {
             case .loggedIn:
-                LoginView()
+                HomeView()
                     .transition(.opacity)
+                    .environmentObject(session)
+                    .environmentObject(authManager)
             case .loggedOut:
                 LoginView()
                     .transition(.opacity)
+                    .environmentObject(authManager)
             case .onboarding:
                 OnboardingView { showLogin in
                     if showLogin {
@@ -25,6 +29,11 @@ struct ContentView: View {
                 }
                 .transition(.asymmetric(insertion: .opacity,
                                         removal: .move(edge: .leading)))
+            case .signUp:
+//                RegisterationView()
+                LoginView()
+                    .environmentObject(authManager)
+                    .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .opacity))
             default:
                 Color.white.ignoresSafeArea()
             }
@@ -32,6 +41,7 @@ struct ContentView: View {
         .animation(.easeInOut, value: session.currentState)
         .onAppear {
             session.configureCurrentState()
+            print("DEBUG: session currentstate", session.currentState)
         }
     }
 }

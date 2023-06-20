@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
+    @EnvironmentObject var session: SessionManager
     var body: some View {
         NavigationView {
 
@@ -22,12 +22,12 @@ struct LoginView: View {
             
             
             //            Email password Fields
-            CustomTextField(text: $email,
+            CustomTextField(text: $authViewModel.email,
                             placeholder: "Email Address",
                             imgName: .email)
             .padding(.bottom)
             
-            CustomTextField(text: $password, placeholder: "Password", imgName: .password, isSecure: true)
+            CustomTextField(text: $authViewModel.password, placeholder: "Password", imgName: .password, isSecure: true)
             
             //            Forgot password link test
             HStack {
@@ -46,7 +46,10 @@ struct LoginView: View {
             //            Login Button
             
             Button {
-                
+                authViewModel.login { isUser in
+                    isUser ? session.signIn() : session.logOut()
+                    print(isUser)
+                }
             } label: {
                 Text("Login")
                     .font(.system(size: 18,weight: .bold))
@@ -83,10 +86,10 @@ struct LoginView: View {
             }
             
             //            Sign Up button
-            
-            
+
             NavigationLink {
                 RegisterationView()
+                    .environmentObject(authViewModel)
             } label: {
                 Text("Don't have an account?")
                 +
@@ -96,7 +99,12 @@ struct LoginView: View {
             .foregroundColor(.black)
             .padding(32)
             
-        }.padding(.horizontal,32)
+        }.overlay(content: {
+            if authViewModel.showLoading {
+                ProgressView()
+            }
+        })
+        .padding(.horizontal,32)
         }.navigationBarHidden(true)
     }
 }

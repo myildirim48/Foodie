@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct RegisterationView: View {
-    @State private var name = ""
-    @State private var email = ""
-    @State private var password = ""
+    @EnvironmentObject private var viewModel: AuthenticationViewModel
+    @EnvironmentObject var session: SessionManager
     @Environment(\.dismiss) var dissmis
     
     var body: some View {
         NavigationView {
-            
             
             VStack(alignment: .leading) {
                 //            Header
@@ -23,21 +21,25 @@ struct RegisterationView: View {
                 Text("Create an account")
                     .font(.system(size: 30, weight: .bold))
                     .padding(.bottom, 45)
+                
                 //            Registration
-                CustomTextField(text: $name, placeholder: "Name", imgName:.name )
+                CustomTextField(text: $viewModel.name, placeholder: "Name", imgName:.name )
                     .padding(.bottom)
                 
-                CustomTextField(text: $email, placeholder: "Email Address", imgName: .email)
+                CustomTextField(text: $viewModel.email, placeholder: "Email Address", imgName: .email)
                     .padding(.bottom)
                 
-                CustomTextField(text: $password, placeholder: "Password", imgName: .password, isSecure: true)
+                CustomTextField(text: $viewModel.password, placeholder: "Password", imgName: .password, isSecure: true)
                     .padding(.bottom,32)
                 
                 //            Sign Up button
                 Button {
-                    
+                    viewModel.signIn { userLoggedIn in
+                        userLoggedIn ? session.signIn() : session.logOut()
+                    }
                 } label: {
-                    HStack{   Image("IconsEnvelope")
+                    HStack{
+                        Image("IconsEnvelope")
                             .foregroundColor(.white)
                         Text("Sign up with email")
                             .font(.system(size: 18,weight: .bold))
@@ -85,9 +87,11 @@ struct RegisterationView: View {
                 .padding(.horizontal,52)
                 .padding(.vertical,32)
                 
-                
-                
-            }.padding(.horizontal,32)
+            }.overlay(content: {
+                if viewModel.showLoading {
+                    ProgressView()
+                }
+            }).padding(.horizontal,32)
         }.navigationBarHidden(true)
     }
 }
