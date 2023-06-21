@@ -38,8 +38,7 @@ struct CategoryView: View {
                 }
                     .background(colors.randomElement())
                     .cornerRadius(15)
-                    .padding()
-
+                    .padding(.bottom,10)
         }
     }
 }
