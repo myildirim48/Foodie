@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		748C1C612A42314100906917 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748C1C602A42314100906917 /* test.swift */; };
 		749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */; };
 		749CFAE12A3DBA7D00380161 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFAE02A3DBA7D00380161 /* ContentView.swift */; };
 		749CFAE32A3DBA7F00380161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749CFAE22A3DBA7F00380161 /* Assets.xcassets */; };
@@ -38,7 +39,15 @@
 		749CFB582A404F7800380161 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 749CFB572A404F7800380161 /* GoogleService-Info.plist */; };
 		749CFB5B2A404FA800380161 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB5A2A404FA800380161 /* AuthenticationViewModel.swift */; };
 		749CFB5D2A40523C00380161 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB5C2A40523B00380161 /* User.swift */; };
-		749CFB602A4060D700380161 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB5F2A4060D700380161 /* HomeView.swift */; };
+		749CFB602A4060D700380161 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB5F2A4060D700380161 /* CustomTabbar.swift */; };
+		749CFB632A41D0F700380161 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB622A41D0F700380161 /* TabBar.swift */; };
+		749CFB662A41D32A00380161 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB652A41D32A00380161 /* DiscoverView.swift */; };
+		749CFB6A2A41D37200380161 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB692A41D37200380161 /* LocationView.swift */; };
+		749CFB6D2A41D38800380161 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB6C2A41D38800380161 /* NotificationView.swift */; };
+		749CFB702A41D39800380161 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB6F2A41D39800380161 /* FavoritesView.swift */; };
+		749CFB732A41D3B000380161 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB722A41D3B000380161 /* CartView.swift */; };
+		749CFB762A41D61900380161 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB752A41D61900380161 /* SearchBar.swift */; };
+		749CFB782A41DB4F00380161 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB772A41DB4F00380161 /* CategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		748C1C602A42314100906917 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		749CFADB2A3DBA7D00380161 /* FoodieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieAppApp.swift; sourceTree = "<group>"; };
 		749CFAE02A3DBA7D00380161 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,7 +101,15 @@
 		749CFB572A404F7800380161 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		749CFB5A2A404FA800380161 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		749CFB5C2A40523B00380161 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		749CFB5F2A4060D700380161 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		749CFB5F2A4060D700380161 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
+		749CFB622A41D0F700380161 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		749CFB652A41D32A00380161 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		749CFB692A41D37200380161 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		749CFB6C2A41D38800380161 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		749CFB6F2A41D39800380161 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		749CFB722A41D3B000380161 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		749CFB752A41D61900380161 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		749CFB772A41DB4F00380161 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +174,7 @@
 				749CFAE02A3DBA7D00380161 /* ContentView.swift */,
 				749CFAE22A3DBA7F00380161 /* Assets.xcassets */,
 				749CFAE42A3DBA7F00380161 /* Preview Content */,
+				748C1C602A42314100906917 /* test.swift */,
 			);
 			path = FoodieApp;
 			sourceTree = "<group>";
@@ -191,6 +210,7 @@
 				749CFB0B2A3DD24B00380161 /* OnboardingButton.swift */,
 				749CFB1D2A3EF78C00380161 /* CustomTextField.swift */,
 				749CFB472A3EFFDE00380161 /* SocialMediaButton.swift */,
+				749CFB752A41D61900380161 /* SearchBar.swift */,
 			);
 			path = CustomItems;
 			sourceTree = "<group>";
@@ -198,7 +218,12 @@
 		749CFB0D2A3DD39400380161 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				749CFB5E2A4060CD00380161 /* Home */,
+				749CFB712A41D3AA00380161 /* Cart */,
+				749CFB6E2A41D38E00380161 /* Favorites */,
+				749CFB6B2A41D37E00380161 /* Notfications */,
+				749CFB682A41D36B00380161 /* Location */,
+				749CFB672A41D35B00380161 /* Discover */,
+				749CFB5E2A4060CD00380161 /* Tabbar */,
 				749CFB152A3E3A0800380161 /* Authentication */,
 				749CFB0E2A3DD39A00380161 /* Onboarding */,
 			);
@@ -273,12 +298,54 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		749CFB5E2A4060CD00380161 /* Home */ = {
+		749CFB5E2A4060CD00380161 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				749CFB5F2A4060D700380161 /* HomeView.swift */,
+				749CFB5F2A4060D700380161 /* CustomTabbar.swift */,
+				749CFB622A41D0F700380161 /* TabBar.swift */,
 			);
-			path = Home;
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		749CFB672A41D35B00380161 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				749CFB652A41D32A00380161 /* DiscoverView.swift */,
+				749CFB772A41DB4F00380161 /* CategoryView.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		749CFB682A41D36B00380161 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				749CFB692A41D37200380161 /* LocationView.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		749CFB6B2A41D37E00380161 /* Notfications */ = {
+			isa = PBXGroup;
+			children = (
+				749CFB6C2A41D38800380161 /* NotificationView.swift */,
+			);
+			path = Notfications;
+			sourceTree = "<group>";
+		};
+		749CFB6E2A41D38E00380161 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				749CFB6F2A41D39800380161 /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		749CFB712A41D3AA00380161 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				749CFB722A41D3B000380161 /* CartView.swift */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,20 +495,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				749CFB702A41D39800380161 /* FavoritesView.swift in Sources */,
 				749CFB5B2A404FA800380161 /* AuthenticationViewModel.swift in Sources */,
+				749CFB662A41D32A00380161 /* DiscoverView.swift in Sources */,
 				749CFB142A3DDC9700380161 /* OnboardingManager.swift in Sources */,
 				749CFB172A3E3A1300380161 /* LoginView.swift in Sources */,
-				749CFB602A4060D700380161 /* HomeView.swift in Sources */,
+				749CFB602A4060D700380161 /* CustomTabbar.swift in Sources */,
 				749CFAE12A3DBA7D00380161 /* ContentView.swift in Sources */,
 				749CFB102A3DD3A700380161 /* OnboardingInfoView.swift in Sources */,
+				749CFB6A2A41D37200380161 /* LocationView.swift in Sources */,
+				749CFB762A41D61900380161 /* SearchBar.swift in Sources */,
 				749CFB0C2A3DD24B00380161 /* OnboardingButton.swift in Sources */,
 				749CFB5D2A40523C00380161 /* User.swift in Sources */,
 				749CFB122A3DDC5300380161 /* OnboardingView.swift in Sources */,
+				748C1C612A42314100906917 /* test.swift in Sources */,
 				749CFB192A3E3EF000380161 /* SessionManager.swift in Sources */,
 				749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */,
 				749CFB4A2A3F53D500380161 /* RegisterationView.swift in Sources */,
+				749CFB732A41D3B000380161 /* CartView.swift in Sources */,
 				749CFB532A3F68AD00380161 /* AuthenticationManager.swift in Sources */,
+				749CFB782A41DB4F00380161 /* CategoryView.swift in Sources */,
+				749CFB632A41D0F700380161 /* TabBar.swift in Sources */,
 				749CFB1E2A3EF78C00380161 /* CustomTextField.swift in Sources */,
+				749CFB6D2A41D38800380161 /* NotificationView.swift in Sources */,
 				749CFB482A3EFFDE00380161 /* SocialMediaButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@ struct ContentView: View {
         ZStack {
             switch session.currentState {
             case .loggedIn:
-                HomeView()
+                TabBar()
                     .transition(.opacity)
                     .environmentObject(session)
                     .environmentObject(authManager)

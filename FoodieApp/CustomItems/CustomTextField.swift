@@ -62,5 +62,6 @@ enum ImageName: String {
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
         CustomTextField(text: .constant(""), placeholder: "Email Address", imgName: .password)
+            .previewLayout(.sizeThatFits)
     }
 }
