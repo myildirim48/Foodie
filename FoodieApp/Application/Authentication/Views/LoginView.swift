@@ -46,8 +46,8 @@ struct LoginView: View {
             
             Button {
                 authViewModel.login { isUser in
-                    isUser ? session.signIn() : session.logOut()
                     print(isUser)
+                    isUser ? session.signIn() : session.logOut()
                 }
             } label: {
                 Text("Login")

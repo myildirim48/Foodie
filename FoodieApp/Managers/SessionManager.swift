@@ -32,6 +32,7 @@ final class SessionManager: ObservableObject {
     func logOut() {
         try? Auth.auth().signOut()
         UserDefaults.standard.set(false, forKey: UserDefaultKeys.userHasBeenLoggedInOrSıgnedUp)
+        UserDefaults.standard.set(false, forKey: UserDefaultKeys.userHasBeenLoggedInOrSıgnedUp)
         currentState = .loggedOut
     }
     
@@ -44,11 +45,10 @@ final class SessionManager: ObservableObject {
         let hasCompletedOnboarding = UserDefaults.standard.bool(forKey: UserDefaultKeys.hasSeenOnboarding)
         let hasCompletedLogin = UserDefaults.standard.bool(forKey: UserDefaultKeys.userHasBeenLoggedInOrSıgnedUp)
 
-        if hasCompletedOnboarding {
-            currentState = .signUp
-//            UserDefaults.standard.set(false, forKey: UserDefaultKeys.hasSeenOnboarding)
-        } else if hasCompletedLogin {
+        if hasCompletedLogin {
             currentState = .loggedIn
+        } else if hasCompletedOnboarding {
+            currentState = .signUp
         } else {
             currentState = .onboarding
         }
