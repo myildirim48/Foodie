@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabBar: View {
     @State private var tabSelected: Tab = .discover
-    
+    @EnvironmentObject private var session : SessionManager
     init() {
         UITabBar.appearance().isHidden = true
     }
@@ -21,6 +21,7 @@ struct TabBar: View {
                 DiscoverView()
             case .location:
                 LocationView()
+                    .environmentObject(session)
             case .cart:
                 CartView()
             case .favorites:

@@ -18,7 +18,6 @@ final class AuthenticationViewModel: ObservableObject {
     
     init(authService: AuthenticationManager) {
         self.authService = authService
-        
     }
     
     func signIn(escaping: @escaping(Bool) -> Void) {

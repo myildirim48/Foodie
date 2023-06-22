@@ -46,10 +46,11 @@ final class SessionManager: ObservableObject {
 
         if hasCompletedOnboarding {
             currentState = .signUp
+//            UserDefaults.standard.set(false, forKey: UserDefaultKeys.hasSeenOnboarding)
         } else if hasCompletedLogin {
             currentState = .loggedIn
         } else {
-            currentState = .loggedOut
+            currentState = .onboarding
         }
     }
 }

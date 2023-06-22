@@ -52,14 +52,14 @@ struct RegisterationView: View {
                 
                 HStack {
                     Rectangle()
-                        .frame(width: 100, height: 1)
+                        .frame(height: 1)
                         .foregroundColor(.secondary.opacity(0.5))
                     Text("Or Continue With")
-                        .font(.system(size: 14,weight: .regular))
+                        .font(.system(size: 12,weight: .regular))
                     Rectangle()
-                        .frame(width: 100, height: 1)
+                        .frame(height: 1)
                         .foregroundColor(.secondary.opacity(0.5))
-                }.padding(.vertical,36)
+                }.padding(.vertical)
                 
                 //            Social Media Connect
                 HStack(spacing: 20) {

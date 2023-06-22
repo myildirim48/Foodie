@@ -15,7 +15,6 @@ enum Tab: String, CaseIterable {
     case notifications
 }
 struct CustomTabbar: View {
-    @EnvironmentObject var session: SessionManager
     @Binding var selectedTab: Tab
     
      private var fillImage: String {

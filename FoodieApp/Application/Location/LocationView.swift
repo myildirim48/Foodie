@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct LocationView: View {
+    @EnvironmentObject var session: SessionManager
+    
+
     var body: some View {
-        Text("LocationView")
+        Button("Log out") {
+            session.logOut()
+        }
     }
 }
 
