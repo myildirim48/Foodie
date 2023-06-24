@@ -8,24 +8,9 @@
 import SwiftUI
 
 struct DiscoverView: View {
-    let categories = [
-        Category(id: 1, name: "Dessert", image: "salad"),
-        Category(id: 2, name: "Food", image: "salad"),
-        Category(id: 3, name: "Bacon", image: "salad"),
-        Category(id: 4, name: "Kebab", image: "salad"),
-        Category(id: 5, name: "Rice", image: "salad"),
-        Category(id: 6, name: "Bacon", image: "salad"),
-        Category(id: 7, name: "Kebab", image: "salad"),
-        Category(id: 8, name: "Rice", image: "salad"),
-        Category(id: 9, name: "Bacon", image: "salad"),
-        Category(id: 10, name: "Kebab", image: "salad"),
-        Category(id: 11, name: "Rice", image: "salad"),
-        Category(id: 12, name: "Bacon", image: "salad"),
-        Category(id: 13, name: "Kebab", image: "salad"),
-        Category(id: 14, name: "Rice", image: "salad")]
 
-    @State var selectedCate: Category? = nil
-
+    @State var selectedCate: CategoryResult? = nil
+    @StateObject private var viewModel = DiscoverViewModel(service: NetworkService())
     var body: some View {
         VStack(spacing: 0) {
             //            Header with search
@@ -53,7 +38,7 @@ struct DiscoverView: View {
                 
                 VStack {
                     ScrollView(showsIndicators: false) {
-                        ForEach(categories) { category in
+                        ForEach(viewModel.categories, id:\.self) { category in
                             MenuItem(category: category, selectedCategory: $selectedCate)
                                 .onTapGesture {
                                     withAnimation(.linear) {
@@ -65,6 +50,8 @@ struct DiscoverView: View {
                 }.offset(x: -16)
             }
 
+        }.task {
+            await viewModel.getCategories()
         }
         
     }
