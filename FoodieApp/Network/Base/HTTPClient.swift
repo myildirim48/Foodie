@@ -20,13 +20,20 @@ extension HTTPClient {
         urlComponents.host = endpoint.host
         urlComponents.path = endpoint.path
         
+//        Adding params like search
+        if let params = endpoint.params {
+            urlComponents.queryItems = [params]
+        }
+                
+        
         guard let url = urlComponents.url else {
             throw RequestError.invalidURL
         }
+        print(url)
         
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
-        request.allHTTPHeaderFields = endpoint.header
+//        request.allHTTPHeaderFields = endpoint.header
 
         if let body = endpoint.body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])

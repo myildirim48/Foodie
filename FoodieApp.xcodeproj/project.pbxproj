@@ -47,6 +47,7 @@
 		749CFB732A41D3B000380161 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB722A41D3B000380161 /* CartView.swift */; };
 		749CFB762A41D61900380161 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB752A41D61900380161 /* SearchBar.swift */; };
 		749CFB782A41DB4F00380161 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFB772A41DB4F00380161 /* CategoryView.swift */; };
+		74B6C9772A4763A700882D6B /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6C9762A4763A700882D6B /* Meal.swift */; };
 		74B7D3042A42DC4200A43A45 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7D3032A42DC4200A43A45 /* SideMenu.swift */; };
 		74B7D30C2A44CE8000A43A45 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7D30B2A44CE8000A43A45 /* Endpoint.swift */; };
 		74B7D30E2A44CE9800A43A45 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7D30D2A44CE9800A43A45 /* HTTPClient.swift */; };
@@ -118,6 +119,7 @@
 		749CFB722A41D3B000380161 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		749CFB752A41D61900380161 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		749CFB772A41DB4F00380161 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		74B6C9762A4763A700882D6B /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		74B7D3032A42DC4200A43A45 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		74B7D30B2A44CE8000A43A45 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		74B7D30D2A44CE9800A43A45 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			children = (
 				749CFB5C2A40523B00380161 /* User.swift */,
 				74B7D3172A45957E00A43A45 /* Category.swift */,
+				74B6C9762A4763A700882D6B /* Meal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				74B7D3042A42DC4200A43A45 /* SideMenu.swift in Sources */,
 				749CFB122A3DDC5300380161 /* OnboardingView.swift in Sources */,
 				749CFB192A3E3EF000380161 /* SessionManager.swift in Sources */,
+				74B6C9772A4763A700882D6B /* Meal.swift in Sources */,
 				749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */,
 				749CFB4A2A3F53D500380161 /* RegisterationView.swift in Sources */,
 				749CFB732A41D3B000380161 /* CartView.swift in Sources */,

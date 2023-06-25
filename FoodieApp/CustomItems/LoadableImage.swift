@@ -15,8 +15,9 @@ struct LoadableImage: View {
                      case .empty:
                          ProgressView()
                      case .success(let image):
-                         image.resizable()
-                              .aspectRatio(contentMode: .fill)
+                         image
+                             .resizable()
+                              .scaledToFill()
                      case .failure:
                          Image(systemName: "fork.knife.circle")
                      @unknown default:

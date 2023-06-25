@@ -17,35 +17,34 @@ struct CategoryView: View {
                            Color.brown.opacity(0.2),
                            Color.blue.opacity(0.2),
                            Color.indigo.opacity(0.2),
-                           Color.mint.opacity(0.2)]    
-    var body: some View {
-        VStack {
+                           Color.mint.opacity(0.2)]
+    @State var meal: Meal
 
+    var body: some View {
                 VStack{
                     HStack {
-                        Text("Salad")
-                            .bold()
-                            .padding()
+                        Text(meal.strMeal)
+                            .font(.system(size: 14, weight: .bold))
+                            .lineLimit(3)
+                            .truncationMode(.tail)
+                            .padding([.leading,.top], 10)
                         Spacer()
                     }
                     VStack {
-                        Image("salad")
-                            .resizable()
+                        LoadableImage(url: meal.strMealThumb)
                             .clipShape(Circle())
-                            .scaledToFill()
-                            .offset(x: 35, y: 35)
+                            .frame(width: 90, height: 90)
+                            .offset(x: 30, y: 20)
                     }
                 }
                     .background(colors.randomElement())
                     .cornerRadius(15)
-                    .padding(.bottom,10)
-        }
     }
 }
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryView()
+        CategoryView(meal: .init(strMeal: "Three-cheese souffles", strMealThumb: "https://www.themealdb.com/images/media/meals/sxwquu1511793428.jpg", id: "52912"))
             .previewLayout(.sizeThatFits)
     }
 }

@@ -13,6 +13,7 @@ extension DiscoverView {
     class DiscoverViewModel: ObservableObject {
         private var service: NetworkService
         @Published var categories: [CategoryResult] = []
+        @Published var meals: [Meal] = []
         
         init(service: NetworkService) {
             self.service = service
@@ -21,9 +22,19 @@ extension DiscoverView {
         func getCategories() async {
             do {
                 try await categories = service.getCategories().categories
-                print(categories)
             } catch {
                 //                    TODO : Show error to user
+            }
+        }
+        
+        func getMealsByCategory(category: String) async {
+            do {
+                meals = []
+                try await meals = service.getMealByCategory(category: category).meals
+                print(meals)
+            } catch {
+                //                    TODO : Show error to user
+                print(error.localizedDescription)
             }
         }
     }

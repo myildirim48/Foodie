@@ -23,19 +23,18 @@ struct DiscoverView: View {
                 GeometryReader { proxy in
                     ScrollView(.vertical, showsIndicators: false) {
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())],spacing: 0) {
-                            ForEach(0..<10) { _ in
-                                    CategoryView()
-                                    .frame(width: proxy.size.width * 0.40)
-                                }
-                        }.padding(.leading,5)
+                    
+                            ForEach(viewModel.meals) { meal in
+                                CategoryView(meal: meal)
+                                    .frame(width: proxy.size.width * 0.40, height: proxy.size.height * 0.3)
+                                
+                            }
 
+                        }.padding(.leading,5)
                     }
-                    .padding(.top, 20)
                     .padding(.leading,10)
                     .frame(width: proxy.size.width * 0.90)
                 }
-
-                
                 VStack {
                     ScrollView(showsIndicators: false) {
                         ForEach(viewModel.categories, id:\.self) { category in
@@ -44,14 +43,21 @@ struct DiscoverView: View {
                                     withAnimation(.linear) {
                                         selectedCate = category
                                     }
+                                    Task {
+                                        await viewModel.getMealsByCategory(category: category.strCategory)
+                                    }
                                 }
                             }
                     }
                 }.offset(x: -16)
+                    .task {
+                        await viewModel.getMealsByCategory(category: selectedCate?.strCategory ?? "Beef")
+                    }
             }
 
         }.task {
             await viewModel.getCategories()
+            selectedCate = viewModel.categories.first
         }
         
     }
