@@ -8,12 +8,11 @@
 import Foundation
 import SwiftUI
 
-extension DiscoverView {
+extension DiscoverCategoriesView {
     @MainActor
-    class DiscoverViewModel: ObservableObject {
+    final class DiscoverCategoriesViewModel: ObservableObject {
         private var service: NetworkService
         @Published var categories: [CategoryResult] = []
-        @Published var meals: [Meal] = []
         
         init(service: NetworkService) {
             self.service = service
@@ -26,16 +25,6 @@ extension DiscoverView {
                 //                    TODO : Show error to user
             }
         }
-        
-        func getMealsByCategory(category: String) async {
-            do {
-                meals = []
-                try await meals = service.getMealByCategory(category: category).meals
-                print(meals)
-            } catch {
-                //                    TODO : Show error to user
-                print(error.localizedDescription)
-            }
-        }
+
     }
 }

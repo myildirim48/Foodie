@@ -18,7 +18,7 @@ struct TabBar: View {
         ZStack {
             switch tabSelected {
             case .discover:
-                DiscoverView()
+                DiscoverCategoriesView()
             case .location:
                 LocationView()
                     .environmentObject(session)

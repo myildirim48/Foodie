@@ -12,7 +12,6 @@ struct Meals: Codable {
 struct Meal: Codable, Identifiable {
     let strMeal: String
     let strMealThumb: String
-//    let idMeal: String
     let id: String
     
     // MARK: - Enumerations

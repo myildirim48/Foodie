@@ -13,7 +13,7 @@ struct RegisterationView: View {
     @Environment(\.dismiss) var dissmis
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             
             VStack(alignment: .leading) {
                 //            Header

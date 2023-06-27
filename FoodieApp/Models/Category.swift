@@ -11,8 +11,14 @@ struct Category: Codable {
 }
 
 // MARK: - CategoryResult
-struct CategoryResult: Codable, Equatable, Hashable{
-    let idCategory, strCategory: String
+struct CategoryResult: Codable, Equatable, Hashable, Identifiable{
+    let id, strCategory: String
     let strCategoryThumb: String
     let strCategoryDescription: String
+    
+    // MARK: - Enumerations
+    enum CodingKeys: String, CodingKey {
+        case id = "idCategory"
+        case strCategory, strCategoryThumb, strCategoryDescription
+    }
 }

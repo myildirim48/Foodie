@@ -11,7 +11,7 @@ struct LoginView: View {
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     @EnvironmentObject var session: SessionManager
     var body: some View {
-        NavigationView {
+        NavigationStack {
 
         VStack(alignment: .leading) {
             //            Header

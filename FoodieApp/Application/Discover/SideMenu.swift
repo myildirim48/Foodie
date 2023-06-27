@@ -10,7 +10,7 @@ import SwiftUI
 struct MenuItem: View {
     
     @State var category: CategoryResult
-    @Binding var selectedCategory: CategoryResult?
+    @Binding var selectedCategory: CategoryResult
 //    var isSelected: Bool
     
     var body: some View {
