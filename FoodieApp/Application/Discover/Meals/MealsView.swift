@@ -10,7 +10,7 @@ import SwiftUI
 struct MealsView: View {
     @State var selectedCate: CategoryResult
     @StateObject private var viewModel = MealsViewModel(service: NetworkService())
-
+    @Namespace var animation
     var body: some View {
         VStack {
             //            Header with search
@@ -21,19 +21,10 @@ struct MealsView: View {
             }.padding()
             
             HStack {
-                GeometryReader { proxy in
         //        %90 left side will be with meals
-        
-                    ScrollView(.vertical, showsIndicators: false) {
-                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())],spacing: 10) {
-                            ForEach(0..<10, id: \.self) { category in
-                                MealView()
-                            }
-                        }
-                    }
-                    .padding(.leading, 5)
-                    .frame(width: proxy.size.width)
-                }
+                    StaggeredGrid(list: viewModel.meals, columns: 2) { meal in
+                        MealCardView(meal: meal)
+                    }.padding([.leading, .trailing], 10)
                 //        Scrollable side menu
                 VStack {
                         ScrollView(showsIndicators: false) {
