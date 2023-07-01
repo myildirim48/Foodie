@@ -29,7 +29,7 @@ struct MenuItem: View {
             Text(category.strCategory)
                 .truncationMode(.tail)
                 .frame(width: 50,height: 15)
-                .font(.system(size: 12,weight: .medium))
+                .font(.custom(CustomFont.medium,size: 12))
                .offset(y: 20)
                .foregroundColor(category == selectedCategory ? .white : .black)
                

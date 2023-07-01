@@ -15,7 +15,7 @@ struct MealCardView: View {
 
         VStack{
             Text(meal.strMeal)
-                .bold()
+                .font(.custom(CustomFont.semiBold,size: 16))
                 .lineLimit(3)
             
             LoadableImage(url: meal.strMealThumb)
@@ -25,10 +25,10 @@ struct MealCardView: View {
             HStack {
 //                Price
                 Text("$\(meal.price.leftPart)")
-                    .font(.system(size: 20,weight: .bold))
+                    .font(.custom(CustomFont.semiBold,size: 20))
                 +
                 Text(".\(meal.price.rightPart)")
-                    .font(.system(size: 16,weight: .bold))
+                    .font(.custom(CustomFont.semiBold,size: 16))
                     .foregroundColor(.gray)
 //                add to cart button
                 Button {

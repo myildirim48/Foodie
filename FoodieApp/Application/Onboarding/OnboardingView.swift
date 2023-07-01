@@ -56,11 +56,12 @@ struct OnboardingView: View {
             
             VStack {
                 Text("Get Started.")
+                    .font(.custom(CustomFont.black,size: 35))
                     .font(.system(size: 35,weight: .heavy))
                     .padding(.top)
                 
                 Text("Order from your favourite restaurants and takeaways within the matter of seconds.")
-                    .font(.system(size: 15, weight: .light))
+                    .font(.custom(CustomFont.light,size: 15))
                     .padding(.top,5)
                     .padding([.leading,.trailing], 40)
                 Spacer()

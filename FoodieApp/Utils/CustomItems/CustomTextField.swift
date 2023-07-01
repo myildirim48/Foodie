@@ -31,7 +31,7 @@ enum ImageName: String {
             if text.isEmpty {
                 
                 Text(placeholder)
-                    .font(.system(size: 18, weight: .regular))
+                    .font(.custom(CustomFont.regular,size: 18))
                     .foregroundColor(.secondary)
                     .padding(.leading, 30)
                     

@@ -16,7 +16,7 @@ struct MealsView: View {
             //            Header with search
             VStack(alignment: .leading) {
                 Text("What would you like to order.")
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.custom(CustomFont.bold,size: 30))
                 SearchBar(searchText: .constant(""))
             }.padding()
             

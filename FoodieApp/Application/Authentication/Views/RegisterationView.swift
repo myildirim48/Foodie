@@ -19,7 +19,7 @@ struct RegisterationView: View {
                 //            Header
                 
                 Text("Create an account")
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.custom(CustomFont.bold,size: 30))
                     .padding(.bottom, 45)
                 
                 //            Registration
@@ -42,7 +42,7 @@ struct RegisterationView: View {
                         Image("IconsEnvelope")
                             .foregroundColor(.white)
                         Text("Sign up with email")
-                            .font(.system(size: 18,weight: .bold))
+                            .font(.custom(CustomFont.bold,size: 18))
                             .foregroundColor(.white)
                     }.frame(width: 330, height: 50, alignment: .center)
                         .background(Color.black)
@@ -55,7 +55,7 @@ struct RegisterationView: View {
                         .frame(height: 1)
                         .foregroundColor(.secondary.opacity(0.5))
                     Text("Or Continue With")
-                        .font(.system(size: 12,weight: .regular))
+                        .font(.custom(CustomFont.regular,size: 12))
                     Rectangle()
                         .frame(height: 1)
                         .foregroundColor(.secondary.opacity(0.5))

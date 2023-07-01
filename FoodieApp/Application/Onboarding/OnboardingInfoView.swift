@@ -19,11 +19,11 @@ struct OnboardingInfoView: View {
             
             VStack {
                 Text(item.title)
-                    .font(.system(size: 30, weight: .heavy))
+                    .font(.custom(CustomFont.bold,size: 30))
                     .frame(width: 350, height: 100, alignment: .center)
 
                 Text(item.description)
-                    .font(.system(size: 20, weight: .light))
+                    .font(.custom(CustomFont.light,size: 20))
                     .padding(.top,5)
                 
             }.multilineTextAlignment(.center)

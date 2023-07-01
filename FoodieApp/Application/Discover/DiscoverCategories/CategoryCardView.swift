@@ -1,5 +1,5 @@
 //
-//  CategoryView.swift
+//  CategoryCardView.swift
 //  FoodieApp
 //
 //  Created by YILDIRIM on 20.06.2023.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Foundation
 
-struct CategoryView: View {
+struct CategoryCardView: View {
     var colors: [Color] = [Color.red.opacity(0.2),
                            Color.cyan.opacity(0.2),
                            Color.green.opacity(0.2),
@@ -24,7 +24,7 @@ struct CategoryView: View {
                 VStack{
                     HStack {
                         Text(category.strCategory)
-                            .font(.system(size: 16, weight: .bold))
+                            .font(.custom(CustomFont.medium,size: 16))
                             .lineLimit(3)
                             .truncationMode(.tail)
                             .padding([.leading,.top], 10)
@@ -37,14 +37,14 @@ struct CategoryView: View {
                             .offset(x: 30, y: 20)
                     }
                 }
-                    .background(colors.randomElement())
+                .background(colors.randomElement())
                     .cornerRadius(15)
     }
 }
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryView(category: .init(id: "52912", strCategory: "Three-cheese souffles", strCategoryThumb: "https://www.themealdb.com/images/media/meals/sxwquu1511793428.jpg", strCategoryDescription: ""))
+        CategoryCardView(category: .init(id: "52912", strCategory: "Three-cheese souffles", strCategoryThumb: "https://www.themealdb.com/images/media/meals/sxwquu1511793428.jpg", strCategoryDescription: ""))
             .previewLayout(.sizeThatFits)
     }
 }

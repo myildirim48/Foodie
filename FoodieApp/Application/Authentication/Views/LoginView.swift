@@ -17,7 +17,7 @@ struct LoginView: View {
             //            Header
             
             Text("Log In to continnue")
-                .font(.system(size: 30, weight: .bold))
+                .font(.custom(CustomFont.bold,size: 30))
                 .padding(.bottom, 45)
             
             //            Email password Fields
@@ -36,7 +36,7 @@ struct LoginView: View {
                     //                    ResetPasswordView(email: $email)
                 } label: {
                     Text("Forgot password?")
-                        .font(.system(size: 14, weight: .semibold))
+                        .font(.custom(CustomFont.semiBold,size: 30))
                         .foregroundColor(.black)
                         .padding([.top,.bottom])
                 }
@@ -51,7 +51,7 @@ struct LoginView: View {
                 }
             } label: {
                 Text("Login")
-                    .font(.system(size: 18,weight: .bold))
+                    .font(.custom(CustomFont.bold,size: 18))
                     .foregroundColor(.white)
                     .frame(width: 340, height: 50, alignment: .center)
                     .background(Color.black)
@@ -66,7 +66,7 @@ struct LoginView: View {
                     .frame(height: 1)
                     .foregroundColor(.secondary.opacity(0.5))
                 Text("Or Continue With")
-                    .font(.system(size: 12,weight: .regular))
+                    .font(.custom(CustomFont.regular,size: 12))
                 Rectangle()
                     .frame(height: 1)
                     .foregroundColor(.secondary.opacity(0.5))

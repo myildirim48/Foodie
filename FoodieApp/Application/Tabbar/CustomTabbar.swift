@@ -30,7 +30,6 @@ struct CustomTabbar: View {
                            .renderingMode(.template)
                            .scaleEffect(tab == selectedTab ? 1.25 : 1.0)
                            .foregroundColor(tab == selectedTab ? .black : .gray.opacity(0.5))
-                           .font(.system(size: 20))
                            .onTapGesture {
                                withAnimation(.easeInOut(duration: 0.1)) {
                                    selectedTab = tab

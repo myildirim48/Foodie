@@ -16,19 +16,19 @@ struct DiscoverCategoriesView: View {
                 //            Header with search
                 VStack(alignment: .leading) {
                     Text("What would you like to order.")
-                        .font(.system(size: 30, weight: .bold))
+                        .font(.custom(CustomFont.bold,size: 30))
                     SearchBar(searchText: .constant(""))
                 }.padding()
                 HStack {
                     GeometryReader { proxy in
                         ScrollView(.vertical, showsIndicators: false) {
-                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())],spacing: 0) {
+                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())],spacing: 8) {
                         
                                 ForEach(viewModel.categories) { category in
                                     NavigationLink {
                                         MealsView(selectedCate: category)
                                     } label: {
-                                        CategoryView(category: category)
+                                        CategoryCardView(category: category)
                                             .frame(width: proxy.size.width * 0.45, height: proxy.size.height * 0.30)
                                     }
 
