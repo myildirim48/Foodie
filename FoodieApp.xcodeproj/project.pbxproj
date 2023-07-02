@@ -55,6 +55,9 @@
 		74B6C9852A4CB7E800882D6B /* StraggledGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6C9842A4CB7E800882D6B /* StraggledGridView.swift */; };
 		74B6C9882A50309700882D6B /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6C9872A50309700882D6B /* MealDetailView.swift */; };
 		74B6C98B2A50A80900882D6B /* CustomFontConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6C98A2A50A80900882D6B /* CustomFontConstants.swift */; };
+		74B6C9902A51C4AA00882D6B /* PortionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6C98F2A51C4AA00882D6B /* PortionButton.swift */; };
+		74B6C9942A51CEE000882D6B /* PortionButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6C9932A51CEE000882D6B /* PortionButtonViewModel.swift */; };
+		74B6C9962A51DFF700882D6B /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6C9952A51DFF700882D6B /* CustomStepper.swift */; };
 		74B7D3042A42DC4200A43A45 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7D3032A42DC4200A43A45 /* SideMenu.swift */; };
 		74B7D30C2A44CE8000A43A45 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7D30B2A44CE8000A43A45 /* Endpoint.swift */; };
 		74B7D30E2A44CE9800A43A45 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7D30D2A44CE9800A43A45 /* HTTPClient.swift */; };
@@ -134,6 +137,9 @@
 		74B6C9842A4CB7E800882D6B /* StraggledGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StraggledGridView.swift; sourceTree = "<group>"; };
 		74B6C9872A50309700882D6B /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 		74B6C98A2A50A80900882D6B /* CustomFontConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontConstants.swift; sourceTree = "<group>"; };
+		74B6C98F2A51C4AA00882D6B /* PortionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionButton.swift; sourceTree = "<group>"; };
+		74B6C9932A51CEE000882D6B /* PortionButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionButtonViewModel.swift; sourceTree = "<group>"; };
+		74B6C9952A51DFF700882D6B /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
 		74B7D3032A42DC4200A43A45 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		74B7D30B2A44CE8000A43A45 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		74B7D30D2A44CE9800A43A45 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -238,17 +244,15 @@
 			path = FoodieAppUITests;
 			sourceTree = "<group>";
 		};
-		749CFB082A3DD22A00380161 /* CustomItems */ = {
+		749CFB082A3DD22A00380161 /* ResuableItems */ = {
 			isa = PBXGroup;
 			children = (
-				749CFB0B2A3DD24B00380161 /* OnboardingButton.swift */,
 				749CFB1D2A3EF78C00380161 /* CustomTextField.swift */,
-				749CFB472A3EFFDE00380161 /* SocialMediaButton.swift */,
 				749CFB752A41D61900380161 /* SearchBar.swift */,
 				74B7D31C2A45A1EE00A43A45 /* LoadableImage.swift */,
 				74B6C9842A4CB7E800882D6B /* StraggledGridView.swift */,
 			);
-			path = CustomItems;
+			path = ResuableItems;
 			sourceTree = "<group>";
 		};
 		749CFB0D2A3DD39400380161 /* Application */ = {
@@ -271,6 +275,7 @@
 			children = (
 				749CFB112A3DDC5300380161 /* OnboardingView.swift */,
 				749CFB0F2A3DD3A700380161 /* OnboardingInfoView.swift */,
+				749CFB0B2A3DD24B00380161 /* OnboardingButton.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 			children = (
 				749CFB162A3E3A1300380161 /* LoginView.swift */,
 				749CFB492A3F53D500380161 /* RegisterationView.swift */,
+				749CFB472A3EFFDE00380161 /* SocialMediaButton.swift */,
 				749CFB592A404F9300380161 /* ViewModel */,
 			);
 			path = Views;
@@ -413,7 +419,7 @@
 			children = (
 				74B6C9892A50A7FE00882D6B /* Constants */,
 				74B6C9812A4C9A6A00882D6B /* Extensions */,
-				749CFB082A3DD22A00380161 /* CustomItems */,
+				749CFB082A3DD22A00380161 /* ResuableItems */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -429,7 +435,8 @@
 		74B6C9862A50308A00882D6B /* MealDetail */ = {
 			isa = PBXGroup;
 			children = (
-				74B6C9872A50309700882D6B /* MealDetailView.swift */,
+				74B6C9912A51CE5600882D6B /* Views */,
+				74B6C9922A51CEB600882D6B /* ViewModels */,
 			);
 			path = MealDetail;
 			sourceTree = "<group>";
@@ -440,6 +447,24 @@
 				74B6C98A2A50A80900882D6B /* CustomFontConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		74B6C9912A51CE5600882D6B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74B6C9872A50309700882D6B /* MealDetailView.swift */,
+				74B6C9952A51DFF700882D6B /* CustomStepper.swift */,
+				74B6C98F2A51C4AA00882D6B /* PortionButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		74B6C9922A51CEB600882D6B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				74B6C9932A51CEE000882D6B /* PortionButtonViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		74B7D3072A44CE4700A43A45 /* Network */ = {
@@ -642,6 +667,7 @@
 				74B7D30E2A44CE9800A43A45 /* HTTPClient.swift in Sources */,
 				74B6C97D2A4B295C00882D6B /* MealsViewModel.swift in Sources */,
 				749CFB662A41D32A00380161 /* DiscoverCategoriesView.swift in Sources */,
+				74B6C9962A51DFF700882D6B /* CustomStepper.swift in Sources */,
 				749CFB142A3DDC9700380161 /* OnboardingManager.swift in Sources */,
 				749CFB172A3E3A1300380161 /* LoginView.swift in Sources */,
 				749CFB602A4060D700380161 /* CustomTabbar.swift in Sources */,
@@ -661,7 +687,9 @@
 				74B6C9772A4763A700882D6B /* Meal.swift in Sources */,
 				749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */,
 				749CFB4A2A3F53D500380161 /* RegisterationView.swift in Sources */,
+				74B6C9942A51CEE000882D6B /* PortionButtonViewModel.swift in Sources */,
 				749CFB732A41D3B000380161 /* CartView.swift in Sources */,
+				74B6C9902A51C4AA00882D6B /* PortionButton.swift in Sources */,
 				74B6C9882A50309700882D6B /* MealDetailView.swift in Sources */,
 				749CFB532A3F68AD00380161 /* AuthenticationManager.swift in Sources */,
 				74B6C9832A4C9A7200882D6B /* Double.swift in Sources */,
