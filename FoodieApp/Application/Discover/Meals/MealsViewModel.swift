@@ -25,7 +25,7 @@ extension MealsView {
                 meals = []
                 try await meals = service.getMealByCategory(category: category).meals
             } catch {
-                //TODO : Show error to user
+                //TODO: - Show error to user
                 print(error.localizedDescription)
             }
         }
@@ -34,7 +34,7 @@ extension MealsView {
             do {
                 try await categories = service.getCategories().categories
             } catch {
-                //                    TODO : Show error to user
+                //TODO: - Show error to user
             }
         }
     }

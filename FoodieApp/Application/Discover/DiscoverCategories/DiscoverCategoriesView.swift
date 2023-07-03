@@ -10,6 +10,7 @@ import SwiftUI
 struct DiscoverCategoriesView: View {
 
     @StateObject private var viewModel = DiscoverCategoriesViewModel(service: NetworkService())
+    @Binding var showTabbar: Bool
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
@@ -26,12 +27,11 @@ struct DiscoverCategoriesView: View {
                         
                                 ForEach(viewModel.categories) { category in
                                     NavigationLink {
-                                        MealsView(selectedCate: category)
+                                        MealsView(selectedCate: category, showTabbar: $showTabbar)
                                     } label: {
                                         CategoryCardView(category: category)
                                             .frame(width: proxy.size.width * 0.45, height: proxy.size.height * 0.30)
                                     }
-
                                 }
 
                             }.padding(.horizontal,5)
@@ -49,7 +49,7 @@ struct DiscoverCategoriesView: View {
 
 struct DiscoverView_Previews: PreviewProvider {
     static var previews: some View {
-        DiscoverCategoriesView()
+        DiscoverCategoriesView(showTabbar: .constant(true))
 
     }
 }

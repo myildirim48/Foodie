@@ -9,6 +9,7 @@ import Foundation
 enum FoodieEndPoints {
     case category
     case mealByCategory(category: String)
+    case mealByID(ID: String)
     
 }
 //I didn't want to write here again and again
@@ -23,6 +24,8 @@ extension FoodieEndPoints: Endpoint {
             return basePath + "categories.php"
         case .mealByCategory:
             return basePath + "filter.php"
+        case .mealByID:
+            return basePath + "lookup.php"
         }
     }
     
@@ -32,12 +35,14 @@ extension FoodieEndPoints: Endpoint {
             return nil
         case .mealByCategory(let category):
             return URLQueryItem(name: "c", value: category)
+        case .mealByID(let id):
+            return URLQueryItem(name: "i", value: id)
         }
     }
     
     var method: RequestMethod {
         switch self {
-        case .category, .mealByCategory:
+        case .category, .mealByCategory, .mealByID:
             return .get
         }
     }

@@ -41,8 +41,9 @@ struct CustomTabbar: View {
                .frame(width: nil, height: 60)
                .background(.thinMaterial)
                .cornerRadius(20)
-               .padding()
-           }
+               .padding(.horizontal)
+            
+        }
     }
 }
 

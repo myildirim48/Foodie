@@ -9,9 +9,14 @@ import SwiftUI
 
 struct MealCardView: View {
     
-    @State var meal: Meal
+    @State private var price = (leftPart: 0, rightPart: 0)
+    @State var meal: Meal {
+        didSet {
+             price = meal.price.splitIntoParts(decimalPlaces: 2, round: true)
+        }
+    }
+    
     var body: some View {
-//        let price = meal.price.splitIntoParts(decimalPlaces: 2, round: true)
 
         VStack{
             Text(meal.strMeal)
@@ -24,10 +29,10 @@ struct MealCardView: View {
             
             HStack {
 //                Price
-                Text("$\(meal.price.leftPart)")
+                Text("$\(meal.price.splitIntoParts(decimalPlaces: 2, round: true).leftPart)")
                     .font(.custom(CustomFont.semiBold,size: 20))
                 +
-                Text(".\(meal.price.rightPart)")
+                Text(".\(meal.price.splitIntoParts(decimalPlaces: 2, round: true).rightPart)")
                     .font(.custom(CustomFont.semiBold,size: 16))
                     .foregroundColor(.gray)
 //                add to cart button

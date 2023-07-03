@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74287DAE2A5348310084CF97 /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DAD2A5348310084CF97 /* MealDetailViewModel.swift */; };
+		74287DB02A5348EA0084CF97 /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DAF2A5348EA0084CF97 /* MealDetail.swift */; };
 		749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */; };
 		749CFAE12A3DBA7D00380161 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFAE02A3DBA7D00380161 /* ContentView.swift */; };
 		749CFAE32A3DBA7F00380161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749CFAE22A3DBA7F00380161 /* Assets.xcassets */; };
@@ -88,6 +90,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		74287DAD2A5348310084CF97 /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
+		74287DAF2A5348EA0084CF97 /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
 		749CFADB2A3DBA7D00380161 /* FoodieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieAppApp.swift; sourceTree = "<group>"; };
 		749CFAE02A3DBA7D00380161 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -319,6 +323,7 @@
 				749CFB5C2A40523B00380161 /* User.swift */,
 				74B7D3172A45957E00A43A45 /* Category.swift */,
 				74B6C9762A4763A700882D6B /* Meal.swift */,
+				74287DAF2A5348EA0084CF97 /* MealDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				74B6C9932A51CEE000882D6B /* PortionButtonViewModel.swift */,
+				74287DAD2A5348310084CF97 /* MealDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -676,6 +682,7 @@
 				74B7D3162A45955400A43A45 /* NetworkService.swift in Sources */,
 				749CFB102A3DD3A700380161 /* OnboardingInfoView.swift in Sources */,
 				749CFB6A2A41D37200380161 /* LocationView.swift in Sources */,
+				74287DB02A5348EA0084CF97 /* MealDetail.swift in Sources */,
 				749CFB762A41D61900380161 /* SearchBar.swift in Sources */,
 				749CFB0C2A3DD24B00380161 /* OnboardingButton.swift in Sources */,
 				74B6C9852A4CB7E800882D6B /* StraggledGridView.swift in Sources */,
@@ -702,6 +709,7 @@
 				749CFB6D2A41D38800380161 /* NotificationView.swift in Sources */,
 				74B7D31B2A45978200A43A45 /* DiscoverCategoriesViewModel.swift in Sources */,
 				749CFB482A3EFFDE00380161 /* SocialMediaButton.swift in Sources */,
+				74287DAE2A5348310084CF97 /* MealDetailViewModel.swift in Sources */,
 				74B7D30C2A44CE8000A43A45 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

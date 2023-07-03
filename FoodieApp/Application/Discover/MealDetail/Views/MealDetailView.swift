@@ -9,9 +9,23 @@ import SwiftUI
 
 struct MealDetailView: View {
     @State private var selectedPortion: PortionButtonViewModel = .small
-    @State private var quantity: Int = 0
+    @State private var quantity: Int = 1
+
+
+    @State var priceDouble: Double
+    @State var mealId: String
+    
+    @Binding var showTabbar: Bool
+    @Environment(\.dismiss) var dismiss
+    @StateObject private var viewModel = MealDetailViewModel(service: NetworkService())
+    
+    private func priceSided() -> (leftPart: Int, rightPart: Int) {
+        return ((priceDouble * selectedPortion.doublePrice) * Double(quantity)).splitIntoParts(decimalPlaces: 2, round: true)
+//        Calculating the price with portion and quantity
+    }
     
     var body: some View {
+        
         ZStack(alignment: .bottom) {
             VStack {
                 headerView
@@ -20,8 +34,9 @@ struct MealDetailView: View {
                     
                     imageView
                     portionButtons
+                    
                     CustomStepper(value: $quantity, range: 0...10) {
-                        Text("Salad")
+                        Text(viewModel.name)
                     }
                     
                      infoAreaCategory
@@ -32,6 +47,15 @@ struct MealDetailView: View {
             }
             addToCart
         }
+        .task {
+            await viewModel.getMaealDetail(id: mealId)
+        }
+        .onAppear {
+            showTabbar = false
+        }
+        .onDisappear {
+            showTabbar = true
+        }.navigationBarHidden(true)
         
         
     }
@@ -39,7 +63,7 @@ struct MealDetailView: View {
         HStack {
             //                Back button
             Button {
-                
+                dismiss()
             } label: {
                 RoundedRectangle(cornerRadius: 8)
                     .foregroundColor(.clear)
@@ -87,8 +111,7 @@ struct MealDetailView: View {
         }.padding()
     }
     var imageView: some View {
-        Image("salad")
-            .resizable()
+        LoadableImage(url: viewModel.imgUrl)
             .frame(width: 240, height: 240)
             .clipShape(Circle())
             .shadow(color: .black.opacity(0.2), radius: 10, x: 10, y: 10)
@@ -109,7 +132,7 @@ struct MealDetailView: View {
                     Text("Category")
                         .font(.custom(CustomFont.semiBold, size: 14))
                     
-                    Text("Chicken")
+                    Text(viewModel.category)
                         .font(.custom(CustomFont.regular, size: 14))
                 }
             Spacer()
@@ -117,7 +140,7 @@ struct MealDetailView: View {
                     Text("Area")
                         .font(.custom(CustomFont.semiBold, size: 14))
                     
-                    Text("Japanese")
+                    Text(viewModel.area)
                         .font(.custom(CustomFont.regular, size: 14))
                 }
             }.padding(.horizontal)
@@ -135,11 +158,9 @@ struct MealDetailView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ingradient(text: "Pepper")
-                    ingradient(text: "Shrimp")
-                    ingradient(text: "Shrimp")
-                    ingradient(text: "Shrimp")
-                    ingradient(text: "Shrimp")
+                    ForEach(viewModel.ingreddients, id: \.self) { ingre in
+                        ingradient(text: ingre)
+                    }
                 }.padding(.horizontal,5)
             }
             
@@ -162,15 +183,21 @@ struct MealDetailView: View {
                 Spacer()
             }
             
-            Text("Preheat oven to 350° F. Spray a 9x13-inch baking pan with non-stick spray. Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small saucepan and cover. Bring to a boil over medium heat. Remove lid and cook for one minute once boiling. Meanwhile, stir together the corn starch and 2 tablespoons of water in a separate dish until smooth. Once sauce is boiling, add mixture to the saucepan and stir to combine. Cook until the sauce starts to thicken then remove from heat. Place the chicken breasts in the prepared pan. Pour one cup of the sauce over top of chicken. Place chicken in oven and bake 35 minutes or until cooked through. Remove from oven and shred chicken in the dish using two forks. *Meanwhile, steam or cook the vegetables according to package directions. Add the cooked vegetables and rice to the casserole dish with the chicken. Add most of the remaining sauce, reserving a bit to drizzle over the top when serving. Gently toss everything together in the casserole dish until combined. Return to oven and cook 15 minutes. Remove from oven and let stand 5 minutes before serving. Drizzle each serving with remaining sauce. Enjoy!")
+            Text(viewModel.about)
                 .font(.custom(CustomFont.regular, size: 14))
         }.padding()
     }
     var addToCart: some View {
         HStack {
-            Text("$12.99")
-                .font(.custom(CustomFont.semiBold, size: 24))
-         
+            
+            
+            Text("$\(priceSided().leftPart)")
+                .font(.custom(CustomFont.semiBold,size: 24))
+            +
+            Text(".\(priceSided().rightPart)")
+                .font(.custom(CustomFont.semiBold,size: 20))
+                .foregroundColor(.gray)
+            
             Spacer()
             
             Button {
@@ -194,6 +221,6 @@ struct MealDetailView: View {
 
 struct MealDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MealDetailView()
+        MealDetailView(priceDouble: 0.0, mealId: "123", showTabbar: .constant(true))
     }
 }

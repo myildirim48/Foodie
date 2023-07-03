@@ -22,4 +22,15 @@ enum PortionButtonViewModel: Int, CaseIterable {
         }
     }
     
+    var doublePrice: Double {
+        switch self {
+        case .small:
+            return 1
+        case .medium:
+            return 1.20
+        case .large:
+            return 1.50
+        }
+    }
+    
 }

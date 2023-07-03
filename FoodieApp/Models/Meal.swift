@@ -14,7 +14,8 @@ struct Meal: Codable, Identifiable, Hashable {
     let strMeal: String
     let strMealThumb: String
     let id: String
-    let price = Double.random(in: 3...25).splitIntoParts(decimalPlaces: 2, round: true)
+    let price = Double.random(in: 3...25)
+//        .splitIntoParts(decimalPlaces: 2, round: true)
     
     public func hash(into hasher: inout Hasher) {
           return hasher.combine(id)
