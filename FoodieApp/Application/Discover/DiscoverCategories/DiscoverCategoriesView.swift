@@ -30,14 +30,15 @@ struct DiscoverCategoriesView: View {
                                         MealsView(selectedCate: category, showTabbar: $showTabbar)
                                     } label: {
                                         CategoryCardView(category: category)
-                                            .frame(width: proxy.size.width * 0.45, height: proxy.size.height * 0.30)
+                                            .frame(width: proxy.size.width * 0.45, height: proxy.size.height * 0.35)
                                     }
                                 }
 
                             }.padding(.horizontal,5)
                         }
                     }
-                }
+                }            .padding(.bottom, 60)
+
 
             }.task {
                 await viewModel.getCategories()

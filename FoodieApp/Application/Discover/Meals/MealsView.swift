@@ -33,6 +33,7 @@ struct MealsView: View {
 
                                 
                         }.padding([.leading, .trailing], 10)
+                        .padding(.bottom, 60)
               
                     //        Scrollable side menu
                     VStack {
@@ -50,6 +51,7 @@ struct MealsView: View {
                                     }
                             }
                     }.padding(.trailing, 10)
+                        .padding(.bottom, 60)
                         .task {
                             await viewModel.getMealsByCategory(category: selectedCate.strCategory)
                         }

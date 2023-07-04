@@ -10,8 +10,6 @@ import SwiftUI
 struct MealDetailView: View {
     @State private var selectedPortion: PortionButtonViewModel = .small
     @State private var quantity: Int = 1
-
-
     @State var priceDouble: Double
     @State var mealId: String
     
@@ -43,6 +41,7 @@ struct MealDetailView: View {
                     
                     ingradientsView
                     aboutMeal
+                        .padding(.bottom,80)
                 }
             }
             addToCart

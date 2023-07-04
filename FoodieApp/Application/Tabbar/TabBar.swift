@@ -20,6 +20,7 @@ struct TabBar: View {
             switch tabSelected {
             case .discover:
                 DiscoverCategoriesView(showTabbar: $showTabbar)
+                    
             case .location:
                 LocationView()
                     .environmentObject(session)
@@ -34,6 +35,7 @@ struct TabBar: View {
                 VStack {
                     Spacer()
                     CustomTabbar(selectedTab: $tabSelected)
+
                 }
             }
         }

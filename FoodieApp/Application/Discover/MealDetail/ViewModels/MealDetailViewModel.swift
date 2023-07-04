@@ -22,7 +22,6 @@ extension MealDetailView {
         func getMaealDetail(id: String) async {
             do {
                 try await meal = service.getMealByID(id: id).meals.first!
-                print(meal["strMeal"])
             } catch {
                 //TODO: - Show error to user
                 print(error.localizedDescription)
