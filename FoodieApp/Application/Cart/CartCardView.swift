@@ -14,7 +14,7 @@ struct CartCardView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(.white)
-                .shadow(color: .black.opacity(0.1), radius: 5,x: 5,y: 10)
+                .shadow(color: .gray.opacity(0.1), radius: 10 ,x: 5,y: 10)
             
             HStack {
 

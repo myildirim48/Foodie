@@ -10,6 +10,8 @@ import SwiftUI
 struct CartView: View {
     @Environment(\.dismiss) var dismiss
     @State private var cartMeals = [1,2,3,4]
+    @Binding var showTabbar: Bool
+
     var body: some View {
         VStack {
             headerview
@@ -75,13 +77,18 @@ struct CartView: View {
                 }
 
             }
+        }.onAppear {
+            showTabbar = false
+        }
+        .onTapGesture {
+            showTabbar = false
         }
     }
     
     var headerview: some View {
         HStack {
             Button {
-                dismiss()
+                showTabbar = true
             } label: {
                 RoundedRectangle(cornerRadius: 8)
                     .foregroundColor(.clear)
@@ -124,6 +131,6 @@ struct CartView: View {
 
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
-        CartView()
+        CartView(showTabbar: .constant(true))
     }
 }

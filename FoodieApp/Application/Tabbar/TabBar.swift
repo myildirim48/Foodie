@@ -20,12 +20,11 @@ struct TabBar: View {
             switch tabSelected {
             case .discover:
                 DiscoverCategoriesView(showTabbar: $showTabbar)
-                    
             case .location:
                 LocationView()
                     .environmentObject(session)
             case .cart:
-                CartView()
+                CartView(showTabbar: $showTabbar)
             case .favorites:
                 FavoritesView()
             case .notifications:
