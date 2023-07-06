@@ -9,6 +9,12 @@ import SwiftUI
 
 struct CartCardView: View {
     @State var quantity: Int = 1
+    var price: (leftPart: Int, rightPart: Int)  {
+        get {
+            (Double(quantity) * 12.99).splitIntoParts(decimalPlaces: 2, round: true)
+            //        Calculating the price with portion and quantity
+        }
+    }
 
     var body: some View {
         ZStack {
@@ -32,8 +38,13 @@ struct CartCardView: View {
                          .font(.custom(CustomFont.regular, size: 14))
                          .foregroundColor(.gray)
                     
-                    Text("$12.90")
-                         .font(.custom(CustomFont.semiBold, size: 14))
+                    
+                    Text("$\(price.leftPart)")
+                        .font(.custom(CustomFont.semiBold,size: 16))
+                    +
+                    Text(".\(price.rightPart)")
+                        .font(.custom(CustomFont.semiBold,size: 12))
+                        .foregroundColor(.gray)
                     
                 }.padding()
                 

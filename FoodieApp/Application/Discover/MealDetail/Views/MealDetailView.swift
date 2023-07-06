@@ -17,8 +17,10 @@ struct MealDetailView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel = MealDetailViewModel(service: NetworkService())
     
-    private func priceSided() -> (leftPart: Int, rightPart: Int) {
-        return ((priceDouble * selectedPortion.doublePrice) * Double(quantity)).splitIntoParts(decimalPlaces: 2, round: true)
+    private var priceSided: (leftPart: Int, rightPart: Int) {
+        get {
+            ((priceDouble * selectedPortion.doublePrice) * Double(quantity)).splitIntoParts(decimalPlaces: 2, round: true)
+        }
 //        Calculating the price with portion and quantity
     }
     
@@ -190,10 +192,10 @@ struct MealDetailView: View {
         HStack {
             
             
-            Text("$\(priceSided().leftPart)")
+            Text("$\(priceSided.leftPart)")
                 .font(.custom(CustomFont.semiBold,size: 24))
             +
-            Text(".\(priceSided().rightPart)")
+            Text(".\(priceSided.rightPart)")
                 .font(.custom(CustomFont.semiBold,size: 20))
                 .foregroundColor(.gray)
             
@@ -220,6 +222,6 @@ struct MealDetailView: View {
 
 struct MealDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MealDetailView(priceDouble: 0.0, mealId: "123", showTabbar: .constant(true))
+        MealDetailView(priceDouble: 5.0, mealId: "123", showTabbar: .constant(true))
     }
 }

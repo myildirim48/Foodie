@@ -21,12 +21,16 @@ struct CartView: View {
                 Spacer()
             }
             
-            ScrollView(.vertical) {
-                ForEach(cartMeals, id: \.self) { Int in
+            List {
+                ForEach($cartMeals, id: \.self) { Int in
                     CartCardView()
                         .padding(.horizontal)
                 }
-            }
+
+                .listRowSeparator(.hidden,edges: .all)
+            }.listStyle(.plain)
+
+
             
             
             
