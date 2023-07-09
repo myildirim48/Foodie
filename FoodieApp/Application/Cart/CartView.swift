@@ -9,30 +9,27 @@ import SwiftUI
 
 struct CartView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var cartMeals = [1,2,3,4]
+    //    @State var cartMeals = Meal(strMeal: "asd", strMealThumb: "asd", id: "asd",offset: 0, isSwiped: false)
+    @StateObject var cartVM = CartViewModel()
     @Binding var showTabbar: Bool
-
+    
     var body: some View {
         VStack {
             headerview
             Spacer()
-            if cartMeals.isEmpty {
-                emptyView
-                Spacer()
-            }
+            //            if cartMeals.isEmpty {
+            //                emptyView
+            //                Spacer()
+            //            }
             
-            List {
-                ForEach($cartMeals, id: \.self) { Int in
-                    CartCardView()
-                        .padding(.horizontal)
+            ScrollView(.vertical, showsIndicators: false) {
+                LazyVStack(spacing: 0) {
+                    ForEach($cartVM.meals) { meal in
+                        CartCardView(meal: meal, meals: $cartVM.meals)
+                            .padding(.horizontal)
+                    }
                 }
-
-                .listRowSeparator(.hidden,edges: .all)
-            }.listStyle(.plain)
-
-
-            
-            
+            }
             
             VStack {
                 
@@ -76,10 +73,10 @@ struct CartView: View {
                         .font(.custom(CustomFont.bold, size: 16))
                         .foregroundColor(.white)
                         .frame(width: 350, height: 50)
-                                     .background(.black)
-                                     .cornerRadius(8)
+                        .background(.black)
+                        .cornerRadius(8)
                 }
-
+                
             }
         }.onAppear {
             showTabbar = false
@@ -121,7 +118,7 @@ struct CartView: View {
     var emptyView: some View {
         VStack {
             Image("empty")
-                
+            
             
             Text("Empty")
                 .font(.custom(CustomFont.semiBold, size: 24))

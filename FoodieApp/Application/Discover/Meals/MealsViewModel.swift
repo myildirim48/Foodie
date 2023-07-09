@@ -10,7 +10,7 @@ extension MealsView {
     @MainActor
     final class MealsViewModel: ObservableObject {
         private var service: NetworkService
-        @Published var meals: [Meal] = []
+        @Published var meals: [MealCategories] = []
         @Published var categories: [CategoryResult] = []
         
         init(service: NetworkService) {

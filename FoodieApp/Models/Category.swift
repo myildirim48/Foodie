@@ -22,3 +22,13 @@ struct CategoryResult: Codable, Equatable, Hashable, Identifiable{
         case strCategory, strCategoryThumb, strCategoryDescription
     }
 }
+
+
+extension Category {
+    static var mockCategories: [CategoryResult] {
+        Bundle.main.decode([CategoryResult].self, from: "Categories.json")
+    }
+    static var mockCategory: CategoryResult {
+        Self.mockCategories[0]
+    }
+}

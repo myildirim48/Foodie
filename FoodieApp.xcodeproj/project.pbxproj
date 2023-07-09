@@ -10,6 +10,10 @@
 		74287DAE2A5348310084CF97 /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DAD2A5348310084CF97 /* MealDetailViewModel.swift */; };
 		74287DB02A5348EA0084CF97 /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DAF2A5348EA0084CF97 /* MealDetail.swift */; };
 		74287DB32A54CAC80084CF97 /* CartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB22A54CAC80084CF97 /* CartCardView.swift */; };
+		74287DB62A5756D90084CF97 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB52A5756D90084CF97 /* CartViewModel.swift */; };
+		74287DB82A5B0E580084CF97 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB72A5B0E580084CF97 /* Bundle.swift */; };
+		74287DBD2A5B294A0084CF97 /* FilterMealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */; };
+		74287DBF2A5B2E060084CF97 /* MealDetailMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 74287DBE2A5B2D070084CF97 /* MealDetailMock.json */; };
 		749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */; };
 		749CFAE12A3DBA7D00380161 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFAE02A3DBA7D00380161 /* ContentView.swift */; };
 		749CFAE32A3DBA7F00380161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749CFAE22A3DBA7F00380161 /* Assets.xcassets */; };
@@ -94,6 +98,11 @@
 		74287DAD2A5348310084CF97 /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
 		74287DAF2A5348EA0084CF97 /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
 		74287DB22A54CAC80084CF97 /* CartCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCardView.swift; sourceTree = "<group>"; };
+		74287DB52A5756D90084CF97 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		74287DB72A5B0E580084CF97 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		74287DBB2A5B11C80084CF97 /* Categories.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Categories.geojson; sourceTree = "<group>"; };
+		74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMealModel.swift; sourceTree = "<group>"; };
+		74287DBE2A5B2D070084CF97 /* MealDetailMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MealDetailMock.json; sourceTree = "<group>"; };
 		749CFADB2A3DBA7D00380161 /* FoodieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieAppApp.swift; sourceTree = "<group>"; };
 		749CFAE02A3DBA7D00380161 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -186,6 +195,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74287DB42A5756D10084CF97 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				74287DB52A5756D90084CF97 /* CartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		749CFAD22A3DBA7D00380161 = {
 			isa = PBXGroup;
 			children = (
@@ -324,8 +341,11 @@
 			children = (
 				749CFB5C2A40523B00380161 /* User.swift */,
 				74B7D3172A45957E00A43A45 /* Category.swift */,
+				74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */,
 				74B6C9762A4763A700882D6B /* Meal.swift */,
 				74287DAF2A5348EA0084CF97 /* MealDetail.swift */,
+				74287DBE2A5B2D070084CF97 /* MealDetailMock.json */,
+				74287DBB2A5B11C80084CF97 /* Categories.geojson */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -396,6 +416,7 @@
 		749CFB712A41D3AA00380161 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				74287DB42A5756D10084CF97 /* ViewModel */,
 				749CFB722A41D3B000380161 /* CartView.swift */,
 				74287DB22A54CAC80084CF97 /* CartCardView.swift */,
 			);
@@ -436,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				74B6C9822A4C9A7200882D6B /* Double.swift */,
+				74287DB72A5B0E580084CF97 /* Bundle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -640,6 +662,7 @@
 				749CFB452A3EFB9800380161 /* Poppins-Thin.ttf in Resources */,
 				749CFAE62A3DBA7F00380161 /* Preview Assets.xcassets in Resources */,
 				749CFAE32A3DBA7F00380161 /* Assets.xcassets in Resources */,
+				74287DBF2A5B2E060084CF97 /* MealDetailMock.json in Resources */,
 				749CFB3D2A3EFB9800380161 /* Poppins-Bold.ttf in Resources */,
 				749CFB582A404F7800380161 /* GoogleService-Info.plist in Resources */,
 				749CFB3F2A3EFB9800380161 /* Poppins-Black.ttf in Resources */,
@@ -669,6 +692,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74B6C97F2A4B2E0900882D6B /* MealCardView.swift in Sources */,
+				74287DB82A5B0E580084CF97 /* Bundle.swift in Sources */,
 				74B7D3122A44CEBD00A43A45 /* RequestError.swift in Sources */,
 				749CFB702A41D39800380161 /* FavoritesView.swift in Sources */,
 				749CFB5B2A404FA800380161 /* AuthenticationViewModel.swift in Sources */,
@@ -703,7 +727,9 @@
 				74B6C9902A51C4AA00882D6B /* PortionButton.swift in Sources */,
 				74B6C9882A50309700882D6B /* MealDetailView.swift in Sources */,
 				749CFB532A3F68AD00380161 /* AuthenticationManager.swift in Sources */,
+				74287DBD2A5B294A0084CF97 /* FilterMealModel.swift in Sources */,
 				74B6C9832A4C9A7200882D6B /* Double.swift in Sources */,
+				74287DB62A5756D90084CF97 /* CartViewModel.swift in Sources */,
 				74B6C98B2A50A80900882D6B /* CustomFontConstants.swift in Sources */,
 				749CFB782A41DB4F00380161 /* CategoryCardView.swift in Sources */,
 				749CFB632A41D0F700380161 /* TabBar.swift in Sources */,

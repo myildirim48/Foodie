@@ -9,12 +9,7 @@ import SwiftUI
 
 struct MealCardView: View {
     
-    @State private var price = (leftPart: 0, rightPart: 0)
-    @State var meal: Meal {
-        didSet {
-             price = meal.price.splitIntoParts(decimalPlaces: 2, round: true)
-        }
-    }
+    @State var meal: MealCategories
     
     var body: some View {
 
@@ -29,10 +24,10 @@ struct MealCardView: View {
             
             HStack {
 //                Price
-                Text("$\(meal.price.splitIntoParts(decimalPlaces: 2, round: true).leftPart)")
+                Text("$\(meal.priceUI().leftPart)")
                     .font(.custom(CustomFont.semiBold,size: 20))
                 +
-                Text(".\(meal.price.splitIntoParts(decimalPlaces: 2, round: true).rightPart)")
+                Text(".\(meal.priceUI().rightPart)")
                     .font(.custom(CustomFont.semiBold,size: 16))
                     .foregroundColor(.gray)
 //                add to cart button
@@ -58,7 +53,7 @@ struct MealCardView: View {
 
 struct MealView_Previews: PreviewProvider {
     static var previews: some View {
-        MealCardView(meal: .init(strMeal: "Mokoko Food", strMealThumb: "https://www.themealdb.com/images/media/meals/sxwquu1511793428.jpg", id: "123"))
+        MealCardView(meal: FilterMealModel.mockMeal)
             .previewLayout(.sizeThatFits)
     }
 }

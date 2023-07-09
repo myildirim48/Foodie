@@ -8,13 +8,13 @@
 import Foundation
 protocol FoodieServiceable {
     func getCategories() async throws -> Category
-    func getMealByCategory(category: String) async throws -> Meals
+    func getMealByCategory(category: String) async throws -> FilterMealModel
     func getMealByID(id: String) async throws -> MealDetail
 }
 
 class NetworkService: FoodieServiceable, HTTPClient {
-    func getMealByCategory(category: String) async throws -> Meals {
-        return try await sendRequest(endpoint: FoodieEndPoints.mealByCategory(category: category), responseModel: Meals.self)
+    func getMealByCategory(category: String) async throws -> FilterMealModel {
+        return try await sendRequest(endpoint: FoodieEndPoints.mealByCategory(category: category), responseModel: FilterMealModel.self)
     }
     
     func getCategories() async throws -> Category {
