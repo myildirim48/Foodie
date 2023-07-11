@@ -43,7 +43,7 @@ struct MealCategories: Codable, Identifiable, Hashable {
 //MARK: - Mocking
 extension FilterMealModel {
     static var mockMeals: [MealCategories] {
-        Bundle.main.decode([MealCategories].self, from: "MealDetail.json")
+        Bundle.main.decode([MealCategories].self, from: "Categories.json")
     }
     static var mockMeal: MealCategories {
         Self.mockMeals[0]

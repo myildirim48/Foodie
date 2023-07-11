@@ -16,6 +16,7 @@ struct Meal: Codable, Identifiable, Hashable {
     let strCategory: String?
     let strArea: String?
     let id: String
+    
     //MARK: - CustomSwipe
     var offset: CGFloat = 0
     var isSwiped: Bool = false
