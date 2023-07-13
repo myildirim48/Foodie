@@ -7,5 +7,5 @@
 
 import Foundation
 class CartViewModel: ObservableObject {
-    @Published var meals = Meals.mockMeals
+    @Published var meals = Meals.mockMeals.meals
 }

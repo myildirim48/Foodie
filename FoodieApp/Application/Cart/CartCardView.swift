@@ -46,7 +46,7 @@ struct CartCardView: View {
 
             HStack {
                 LoadableImage(url: meal.strMealThumb)
-                    .frame(width: 60, height: 60)
+                    .frame(width: 80, height: 80)
                     .cornerRadius(10)
                     .padding(.leading)
                 
@@ -54,7 +54,7 @@ struct CartCardView: View {
                     Text(meal.strMeal)
                          .font(.custom(CustomFont.semiBold, size: 14))
                     
-                    Text((meal.strArea ?? "") + ", \(meal.strCategory ?? "")")
+                    Text(meal.strArea + ", \(meal.strCategory)")
                          .font(.custom(CustomFont.regular, size: 14))
                          .foregroundColor(.gray)
                     
@@ -66,7 +66,7 @@ struct CartCardView: View {
                         .font(.custom(CustomFont.semiBold,size: 12))
                         .foregroundColor(.gray)
                     
-                }.padding()
+                }
                 
                 CustomStepper(value: $quantity, range: 0...10) { }
             }.background(.white)
@@ -121,6 +121,7 @@ struct CartCardView: View {
 
 struct CartCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CartCardView(meal: .constant(Meals.mockMeal), meals: .constant(Meals.mockMeals))
+        CartCardView(meal: .constant(Meals.mockMeal), meals: .constant(Meals.mockMeals.meals))
     }
+
 }

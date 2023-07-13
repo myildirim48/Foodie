@@ -5,7 +5,9 @@
             "strMeal": "Teriyaki Chicken Casserole",
             "strCategory": "Chicken",
             "strArea": "Japanese",
-            "strMealThumb": "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg"
+            "strMealThumb": "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg",
+            "strCategory": "asd",
+            "strArea": "asd"
         }
     ]
 }

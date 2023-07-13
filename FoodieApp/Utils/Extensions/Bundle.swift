@@ -10,8 +10,8 @@ import Foundation
 extension Bundle {
     public func decode<T: Decodable>(_ type: T.Type,
                                      from file: String,
-                                     dateDecodingStategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
-                                     keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
+                                     keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .convertFromSnakeCase
+    ) -> T {
         guard let url = self.url(forResource: file, withExtension: nil) else {
             fatalError("Failed to locate \(file) in bundle.")
         }
@@ -20,7 +20,6 @@ extension Bundle {
         }
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = keyDecodingStrategy
-        decoder.dateDecodingStrategy = dateDecodingStategy
         guard let decodedData = try? decoder.decode(T.self, from: data) else {
             fatalError("Failed to decode \(file) from bundle.")
         }

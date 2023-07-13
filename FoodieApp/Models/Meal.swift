@@ -9,13 +9,13 @@ import Foundation
 struct Meals: Codable {
     let meals: [Meal]
 }
-struct Meal: Codable, Identifiable, Hashable {
+struct Meal: Codable, Identifiable {
     
-    let strMeal: String
-    let strMealThumb: String
-    let strCategory: String?
-    let strArea: String?
     let id: String
+    let strMeal: String
+    let strCategory: String
+    let strArea: String
+    let strMealThumb: String
     
     //MARK: - CustomSwipe
     var offset: CGFloat = 0
@@ -26,11 +26,6 @@ struct Meal: Codable, Identifiable, Hashable {
         return price.splitIntoParts(decimalPlaces: 2, round: true)
     }
     
-    
-    public func hash(into hasher: inout Hasher) {
-          return hasher.combine(id)
-      }
-    
     static func == (lhs: Meal, rhs: Meal) -> Bool {
         return lhs.id == rhs.id
     }
@@ -40,15 +35,15 @@ struct Meal: Codable, Identifiable, Hashable {
     // MARK: - Enumerations
     enum CodingKeys: String, CodingKey {
         case id = "idMeal"
-        case strMeal, strMealThumb, offset, isSwiped, strCategory, strArea
+        case strMeal, strMealThumb, strCategory, strArea
     }
 }
 //MARK: - Mocking
 extension Meals {
-    static var mockMeals: [Meal] {
-        Bundle.main.decode([Meal].self, from: "MealDetailMock.json")
+    static var mockMeals: Meals {
+        Bundle.main.decode(Meals.self, from: "MealsMock.json")
     }
     static var mockMeal: Meal {
-        Self.mockMeals[0]
+        Self.mockMeals.meals[0]
     }
 }

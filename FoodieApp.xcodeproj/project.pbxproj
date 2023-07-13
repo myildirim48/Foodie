@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		741880842A5DD4F700E11C2D /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 741880832A5DD4F700E11C2D /* Categories.json */; };
 		74287DAE2A5348310084CF97 /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DAD2A5348310084CF97 /* MealDetailViewModel.swift */; };
 		74287DB02A5348EA0084CF97 /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DAF2A5348EA0084CF97 /* MealDetail.swift */; };
 		74287DB32A54CAC80084CF97 /* CartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB22A54CAC80084CF97 /* CartCardView.swift */; };
 		74287DB62A5756D90084CF97 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB52A5756D90084CF97 /* CartViewModel.swift */; };
 		74287DB82A5B0E580084CF97 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB72A5B0E580084CF97 /* Bundle.swift */; };
 		74287DBD2A5B294A0084CF97 /* FilterMealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */; };
-		74287DBF2A5B2E060084CF97 /* MealDetailMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 74287DBE2A5B2D070084CF97 /* MealDetailMock.json */; };
+		74287DBF2A5B2E060084CF97 /* MealsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 74287DBE2A5B2D070084CF97 /* MealsMock.json */; };
 		749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */; };
 		749CFAE12A3DBA7D00380161 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFAE02A3DBA7D00380161 /* ContentView.swift */; };
 		749CFAE32A3DBA7F00380161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749CFAE22A3DBA7F00380161 /* Assets.xcassets */; };
@@ -95,14 +96,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		741880832A5DD4F700E11C2D /* Categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
 		74287DAD2A5348310084CF97 /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
 		74287DAF2A5348EA0084CF97 /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
 		74287DB22A54CAC80084CF97 /* CartCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCardView.swift; sourceTree = "<group>"; };
 		74287DB52A5756D90084CF97 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		74287DB72A5B0E580084CF97 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
-		74287DBB2A5B11C80084CF97 /* Categories.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Categories.geojson; sourceTree = "<group>"; };
 		74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMealModel.swift; sourceTree = "<group>"; };
-		74287DBE2A5B2D070084CF97 /* MealDetailMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MealDetailMock.json; sourceTree = "<group>"; };
+		74287DBE2A5B2D070084CF97 /* MealsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MealsMock.json; sourceTree = "<group>"; };
 		74287DC02A5B50390084CF97 /* FilteredMealMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FilteredMealMock.json; sourceTree = "<group>"; };
 		749CFADB2A3DBA7D00380161 /* FoodieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieAppApp.swift; sourceTree = "<group>"; };
@@ -345,9 +346,9 @@
 				74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */,
 				74287DC02A5B50390084CF97 /* FilteredMealMock.json */,
 				74B6C9762A4763A700882D6B /* Meal.swift */,
+				74287DBE2A5B2D070084CF97 /* MealsMock.json */,
 				74287DAF2A5348EA0084CF97 /* MealDetail.swift */,
-				74287DBE2A5B2D070084CF97 /* MealDetailMock.json */,
-				74287DBB2A5B11C80084CF97 /* Categories.geojson */,
+				741880832A5DD4F700E11C2D /* Categories.json */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -664,10 +665,11 @@
 				749CFB452A3EFB9800380161 /* Poppins-Thin.ttf in Resources */,
 				749CFAE62A3DBA7F00380161 /* Preview Assets.xcassets in Resources */,
 				749CFAE32A3DBA7F00380161 /* Assets.xcassets in Resources */,
-				74287DBF2A5B2E060084CF97 /* MealDetailMock.json in Resources */,
+				74287DBF2A5B2E060084CF97 /* MealsMock.json in Resources */,
 				749CFB3D2A3EFB9800380161 /* Poppins-Bold.ttf in Resources */,
 				749CFB582A404F7800380161 /* GoogleService-Info.plist in Resources */,
 				749CFB3F2A3EFB9800380161 /* Poppins-Black.ttf in Resources */,
+				741880842A5DD4F700E11C2D /* Categories.json in Resources */,
 				749CFB3C2A3EFB9800380161 /* Poppins-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

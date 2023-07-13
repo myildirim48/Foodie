@@ -25,10 +25,10 @@ struct CategoryResult: Codable, Equatable, Hashable, Identifiable{
 
 
 extension Category {
-    static var mockCategories: [CategoryResult] {
-        Bundle.main.decode([CategoryResult].self, from: "Categories.json")
+    static var mockCategories: Category {
+        Bundle.main.decode(Category.self, from: "Categories.json")
     }
     static var mockCategory: CategoryResult {
-        Self.mockCategories[0]
+        Self.mockCategories.categories[0]
     }
 }

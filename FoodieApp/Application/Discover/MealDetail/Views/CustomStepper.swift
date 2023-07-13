@@ -20,14 +20,13 @@ struct CustomStepper<Label: View>: View {
             Spacer()
             HStack {
                 Button("-") { if value != range.lowerBound { value -= 1 } }
-                    
                 Spacer()
                 Text(value.formatted())
                 Spacer()
                 Button("+") { if value != range.upperBound { value += 1 }  }
             }.padding()
             .font(.custom(CustomFont.semiBold, size: 20))
-            .frame(width: 120, height: 44)
+            .frame(width: 100, height: 34)
             .background {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color.secondary.opacity(0.1))
