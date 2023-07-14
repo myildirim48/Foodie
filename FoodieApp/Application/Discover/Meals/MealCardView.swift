@@ -10,6 +10,7 @@ import SwiftUI
 struct MealCardView: View {
     
     @State var meal: MealCategories
+    @StateObject private var viewModel = MealCardViewModel()
     
     var body: some View {
 
@@ -33,6 +34,7 @@ struct MealCardView: View {
 //                add to cart button
                 Button {
 //                    TODO: add to cart
+                    viewModel.addToCart(meal: meal)
                 } label: {
                     VStack {
                         Image("IconsCart")

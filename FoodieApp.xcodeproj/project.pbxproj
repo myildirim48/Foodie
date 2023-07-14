@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		741880842A5DD4F700E11C2D /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 741880832A5DD4F700E11C2D /* Categories.json */; };
+		741880C32A5F90DC00E11C2D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 741880C22A5F90DC00E11C2D /* Realm */; };
+		741880C52A5F90DC00E11C2D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 741880C42A5F90DC00E11C2D /* RealmSwift */; };
 		74287DAE2A5348310084CF97 /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DAD2A5348310084CF97 /* MealDetailViewModel.swift */; };
 		74287DB02A5348EA0084CF97 /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DAF2A5348EA0084CF97 /* MealDetail.swift */; };
 		74287DB32A54CAC80084CF97 /* CartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB22A54CAC80084CF97 /* CartCardView.swift */; };
@@ -15,6 +17,8 @@
 		74287DB82A5B0E580084CF97 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB72A5B0E580084CF97 /* Bundle.swift */; };
 		74287DBD2A5B294A0084CF97 /* FilterMealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */; };
 		74287DBF2A5B2E060084CF97 /* MealsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 74287DBE2A5B2D070084CF97 /* MealsMock.json */; };
+		74335FCF2A61CEBC00BE680C /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74335FCE2A61CEBC00BE680C /* CartModel.swift */; };
+		74335FD22A61E2CB00BE680C /* MealCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74335FD12A61E2CB00BE680C /* MealCardViewModel.swift */; };
 		749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */; };
 		749CFAE12A3DBA7D00380161 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFAE02A3DBA7D00380161 /* ContentView.swift */; };
 		749CFAE32A3DBA7F00380161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749CFAE22A3DBA7F00380161 /* Assets.xcassets */; };
@@ -105,6 +109,8 @@
 		74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMealModel.swift; sourceTree = "<group>"; };
 		74287DBE2A5B2D070084CF97 /* MealsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MealsMock.json; sourceTree = "<group>"; };
 		74287DC02A5B50390084CF97 /* FilteredMealMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FilteredMealMock.json; sourceTree = "<group>"; };
+		74335FCE2A61CEBC00BE680C /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		74335FD12A61E2CB00BE680C /* MealCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCardViewModel.swift; sourceTree = "<group>"; };
 		749CFADB2A3DBA7D00380161 /* FoodieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieAppApp.swift; sourceTree = "<group>"; };
 		749CFAE02A3DBA7D00380161 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -176,6 +182,8 @@
 			files = (
 				749CFB4D2A3F671400380161 /* FirebaseAuth in Frameworks */,
 				749CFB4F2A3F671400380161 /* FirebaseFirestore in Frameworks */,
+				741880C32A5F90DC00E11C2D /* Realm in Frameworks */,
+				741880C52A5F90DC00E11C2D /* RealmSwift in Frameworks */,
 				749CFB512A3F671400380161 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +211,23 @@
 				74287DB52A5756D90084CF97 /* CartViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		74335FCD2A61CEAE00BE680C /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				74335FCE2A61CEBC00BE680C /* CartModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		74335FD02A61E2C000BE680C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				74B6C97C2A4B295C00882D6B /* MealsViewModel.swift */,
+				74335FD12A61E2CB00BE680C /* MealCardViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		749CFAD22A3DBA7D00380161 = {
@@ -341,6 +366,7 @@
 		749CFB552A404C1F00380161 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				74335FCD2A61CEAE00BE680C /* Realm */,
 				749CFB5C2A40523B00380161 /* User.swift */,
 				74B7D3172A45957E00A43A45 /* Category.swift */,
 				74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */,
@@ -440,8 +466,8 @@
 			isa = PBXGroup;
 			children = (
 				74B6C97E2A4B2E0900882D6B /* MealCardView.swift */,
+				74335FD02A61E2C000BE680C /* ViewModels */,
 				74B6C97A2A4B261C00882D6B /* MealsView.swift */,
-				74B6C97C2A4B295C00882D6B /* MealsViewModel.swift */,
 			);
 			path = Meals;
 			sourceTree = "<group>";
@@ -566,6 +592,8 @@
 				749CFB4C2A3F671400380161 /* FirebaseAuth */,
 				749CFB4E2A3F671400380161 /* FirebaseFirestore */,
 				749CFB502A3F671400380161 /* FirebaseFirestoreSwift */,
+				741880C22A5F90DC00E11C2D /* Realm */,
+				741880C42A5F90DC00E11C2D /* RealmSwift */,
 			);
 			productName = FoodieApp;
 			productReference = 749CFADB2A3DBA7D00380161 /* FoodieApp.app */;
@@ -641,6 +669,7 @@
 			mainGroup = 749CFAD22A3DBA7D00380161;
 			packageReferences = (
 				749CFB4B2A3F671300380161 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				741880C12A5F90DC00E11C2D /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 749CFADC2A3DBA7D00380161 /* Products */;
 			projectDirPath = "";
@@ -698,6 +727,7 @@
 				74B6C97F2A4B2E0900882D6B /* MealCardView.swift in Sources */,
 				74287DB82A5B0E580084CF97 /* Bundle.swift in Sources */,
 				74B7D3122A44CEBD00A43A45 /* RequestError.swift in Sources */,
+				74335FD22A61E2CB00BE680C /* MealCardViewModel.swift in Sources */,
 				749CFB702A41D39800380161 /* FavoritesView.swift in Sources */,
 				749CFB5B2A404FA800380161 /* AuthenticationViewModel.swift in Sources */,
 				74B7D3182A45957E00A43A45 /* Category.swift in Sources */,
@@ -722,6 +752,7 @@
 				74B7D3042A42DC4200A43A45 /* SideMenu.swift in Sources */,
 				749CFB122A3DDC5300380161 /* OnboardingView.swift in Sources */,
 				74B6C97B2A4B261C00882D6B /* MealsView.swift in Sources */,
+				74335FCF2A61CEBC00BE680C /* CartModel.swift in Sources */,
 				749CFB192A3E3EF000380161 /* SessionManager.swift in Sources */,
 				74B6C9772A4763A700882D6B /* Meal.swift in Sources */,
 				749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */,
@@ -1073,6 +1104,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		741880C12A5F90DC00E11C2D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		749CFB4B2A3F671300380161 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1084,6 +1123,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		741880C22A5F90DC00E11C2D /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 741880C12A5F90DC00E11C2D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		741880C42A5F90DC00E11C2D /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 741880C12A5F90DC00E11C2D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		749CFB4C2A3F671400380161 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 749CFB4B2A3F671300380161 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

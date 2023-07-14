@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CartView: View {
     @Environment(\.dismiss) var dismiss
-    //    @State var cartMeals = Meal(strMeal: "asd", strMealThumb: "asd", id: "asd",offset: 0, isSwiped: false)
     @StateObject var cartVM = CartViewModel()
     @Binding var showTabbar: Bool
+    
     
     var body: some View {
         VStack {

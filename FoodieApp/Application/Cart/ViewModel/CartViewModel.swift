@@ -6,6 +6,14 @@
 //
 
 import Foundation
+import RealmSwift
+
 class CartViewModel: ObservableObject {
     @Published var meals = Meals.mockMeals.meals
+    @ObservedResults(CartModel.self) var cartItems
+    
+//    Realm Funcs
+    func addOneMore() {
+        
+    }
 }

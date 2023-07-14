@@ -13,6 +13,7 @@ extension MealsView {
         @Published var meals: [MealCategories] = []
         @Published var categories: [CategoryResult] = []
         
+        
         init(service: NetworkService) {
             self.service = service
             Task {
@@ -20,6 +21,7 @@ extension MealsView {
             }
         }
         
+        //MARK: - Networking - Fetching data funcs
         func getMealsByCategory(category: String) async {
             do {
                 meals = []
