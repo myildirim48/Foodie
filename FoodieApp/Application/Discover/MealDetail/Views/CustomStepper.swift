@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomStepper<Label: View>: View {
     @Binding var value: Int
     var range: ClosedRange<Int> // todo
-    @ViewBuilder var label: Label
+    @ViewBuilder var label: Label 
     
     var body: some View {
         HStack {

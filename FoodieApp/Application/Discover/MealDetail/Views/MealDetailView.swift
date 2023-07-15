@@ -35,7 +35,7 @@ struct MealDetailView: View {
                     imageView
                     portionButtons
                     
-                    CustomStepper(value: $quantity, range: 0...10) {
+                    CustomStepper(value: $quantity, range: 1...10) {
                         Text(viewModel.name)
                     }
                     
@@ -91,7 +91,8 @@ struct MealDetailView: View {
             
             //                Favorite button
             Button {
-                
+                //TODO: - Add favorites
+
             } label: {
                 
                 RoundedRectangle(cornerRadius: 8)
@@ -202,7 +203,7 @@ struct MealDetailView: View {
             Spacer()
             
             Button {
-                
+                viewModel.addToCart(price: priceDouble)
             } label: {
                 Text("Add to cart")
                     .font(.custom(CustomFont.bold, size: 16))

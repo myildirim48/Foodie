@@ -19,10 +19,10 @@ extension MealCardView {
             
                 do {
                     let realm = try! Realm()
-                    
+                    print("User Realm User file location: \(realm.configuration.fileURL!.path)")
                     guard let objectToUpdate = realm.object(ofType: CartModel.self, forPrimaryKey: meal.id) else {
                         
-                        let newCartItem = CartModel(name: meal.strMeal, imgUrl: meal.strMealThumb, price: meal.price)
+                        let newCartItem = CartModel(id: meal.id,name: meal.strMeal, imgUrl: meal.strMealThumb, price: meal.price, quantity: 1)
                         $cart.append(newCartItem)
                         savedToCart = true
                         return
@@ -32,6 +32,8 @@ extension MealCardView {
                         realm.delete(objectToUpdate)
                         savedToCart = false
                     })
+                    
+                    print("Saved")
                 } catch {
                     print(error.localizedDescription)
                 }

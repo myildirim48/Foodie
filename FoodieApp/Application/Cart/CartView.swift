@@ -6,26 +6,29 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct CartView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject var cartVM = CartViewModel()
     @Binding var showTabbar: Bool
     
+    @ObservedResults(CartModel.self) var cartItems
+    @StateObject private var viewModel = CartCardViewModel()
     
     var body: some View {
         VStack {
             headerview
             Spacer()
-            //            if cartMeals.isEmpty {
-            //                emptyView
-            //                Spacer()
-            //            }
+            
+            if cartItems.isEmpty {
+                emptyView
+                Spacer()
+            }
             
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(spacing: 0) {
-                    ForEach($cartVM.meals) { meal in
-                        CartCardView(meal: meal, meals: $cartVM.meals)
+                    ForEach(cartItems) { meal in
+                        CartCardView(meal: meal, viewModel: viewModel)
                             .padding(.horizontal)
                     }
                 }
@@ -38,7 +41,7 @@ struct CartView: View {
                         Text("Sub Total")
                             .font(.custom(CustomFont.regular, size: 16))
                         Spacer()
-                        Text("$10")
+                        Text( "$" + String(format: "%.2f", viewModel.totalPrice))
                             .font(.custom(CustomFont.bold, size: 16))
                     }
                     HStack {
@@ -53,7 +56,8 @@ struct CartView: View {
                         Text("Total")
                             .font(.custom(CustomFont.regular, size: 16))
                         Spacer()
-                        Text("$13")
+                        
+                        Text( "$" + String(format: "%.2f", viewModel.totalPrice + 3.0))
                             .font(.custom(CustomFont.bold, size: 16))
                     }
                 }

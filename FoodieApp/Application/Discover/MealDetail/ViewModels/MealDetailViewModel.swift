@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RealmSwift
+
 extension MealDetailView {
     
     
@@ -13,12 +15,36 @@ extension MealDetailView {
     final class MealDetailViewModel: ObservableObject {
         private var service: NetworkService
         @Published var meal: [String:String?] = [:]
+        @ObservedResults(CartModel.self) private var cartItems
         
         init(service: NetworkService) {
             self.service = service
-            
         }
         
+//MARK: - Realm
+        func addToCart(price: Double) {
+                do {
+                    let realm = try! Realm()
+                    print("User Realm User file location: \(realm.configuration.fileURL!.path)")
+                    guard let objectToUpdate = realm.object(ofType: CartModel.self, forPrimaryKey: id) else {
+                        
+                        let newCartItem = CartModel(id: id,name: name, imgUrl: imgUrl, price: price, quantity: 1)
+                        $cartItems.append(newCartItem)
+                        return
+                    }
+                    
+                    try realm.write({
+                        realm.delete(objectToUpdate)
+                    })
+                    
+                    print("Saved")
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        
+        
+//MARK: - Fetch data
         func getMaealDetail(id: String) async {
             do {
                 try await meal = service.getMealByID(id: id).meals.first!
@@ -28,9 +54,13 @@ extension MealDetailView {
             }
         }
         
+        //MARK: - Data to ui
         //        Data
         private func dicToData(type: String) -> String {
             return (meal[type] ?? "") ?? ""
+        }
+        private var id: String {
+            return dicToData(type: "idMeal")
         }
         
         var name: String {

@@ -11,12 +11,15 @@ struct CartCardView: View {
     @State var quantity: Int = 1
     
 //    For real time update
-    @Binding var meal: Meal
-    @Binding var meals: [Meal]
+    @State var meal: CartModel
+    @State private var offset: CGFloat = 0.0
+    @State private var isSwiped: Bool = false
+    
+    @StateObject var viewModel: CartCardViewModel
     
     var price: (leftPart: Int, rightPart: Int)  {
         get {
-            (Double(quantity) * 12.99).splitIntoParts(decimalPlaces: 2, round: true)
+            (Double(quantity) * meal.price).splitIntoParts(decimalPlaces: 2, round: true)
             //        Calculating the price with portion and quantity
         }
     }
@@ -45,20 +48,19 @@ struct CartCardView: View {
             }
 
             HStack {
-                LoadableImage(url: meal.strMealThumb)
+                LoadableImage(url: meal.imageUrl)
                     .frame(width: 80, height: 80)
                     .cornerRadius(10)
                     .padding(.leading)
                 
                 VStack(alignment: .leading) {
-                    Text(meal.strMeal)
+                    Text(meal.name)
                          .font(.custom(CustomFont.semiBold, size: 14))
                     
-                    Text(meal.strArea + ", \(meal.strCategory)")
-                         .font(.custom(CustomFont.regular, size: 14))
-                         .foregroundColor(.gray)
-                    
-                    
+//                    Text("Meal strArea")
+//                         .font(.custom(CustomFont.regular, size: 14))
+//                         .foregroundColor(.gray)
+                                        
                     Text("$\(price.leftPart)")
                         .font(.custom(CustomFont.semiBold,size: 16))
                     +
@@ -68,24 +70,29 @@ struct CartCardView: View {
                     
                 }
                 
-                CustomStepper(value: $quantity, range: 0...10) { }
+                CustomStepper(value: $quantity, range: 1...10) { }
+                
+                
+                
             }.background(.white)
-            .offset(x: meal.offset)
+            .offset(x: offset)
+            .onChange(of: quantity, perform: { _ in
+                viewModel.calculateTotalPrice()
+            })
             .gesture(DragGesture().onChanged(onChanged(value:)).onEnded(onEnd(value:)))
-        }
-//        .frame(width: 350, height: 100)
-//            .padding(5)
-
+        }.padding(.bottom,5)
     }
 //    Swipe action funcs
     func onChanged(value: DragGesture.Value) {
         if value.translation.width < 0 {
-            if meal.isSwiped {
-                meal.offset = value.translation.width - 90
+            if isSwiped {
+                offset = value.translation.width - 90
+                print(offset, "Meal Swipped")
+
             } else {
-                meal.offset = value.translation.width
-                print(meal.offset)
-                print(value.translation.width)
+                print(offset, "Meal Offset")
+                offset = value.translation.width
+                print(value.translation.width, "Value Widht")
 
             }
         }
@@ -95,33 +102,36 @@ struct CartCardView: View {
         withAnimation(.easeOut) {
             if value.translation.width < 0 {
                 if -value.translation.width > UIScreen.main.bounds.width / 2 {
-                    meal.offset = -1000
+                    offset = -1000
                     deleteItem()
-                } else if -meal.offset > 50 {
-                    meal.isSwiped = true
-                    meal.offset = -110
+                } else if -offset > 50 {
+                    isSwiped = true
+                    offset = -110
                 } else {
-                    meal.isSwiped = false
-                    meal.offset = 0
+                    isSwiped = false
+                    offset = 0
                 }
             } else {
-                meal.isSwiped = false
-                meal.offset = 0
+                isSwiped = false
+                offset = 0
             }
         }
     }
     
     // Removing Item
     func deleteItem() {
-        meals.removeAll { (meal) -> Bool in
-            return self.meal.id == meal.id
-        }
+        
+        viewModel.deleteFromRealm(meal: meal)
+        
+//        meals.removeAll { (meal) -> Bool in
+//            return self.meal.id == meal.id
+//        }
     }
 }
-
-struct CartCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CartCardView(meal: .constant(Meals.mockMeal), meals: .constant(Meals.mockMeals.meals))
-    }
-
-}
+//
+//struct CartCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CartCardView(meal: <#T##Binding<CartModel>#>, meals: <#T##Binding<[CartModel]>#>)
+//    }
+//
+//}

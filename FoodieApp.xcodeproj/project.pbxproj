@@ -13,7 +13,7 @@
 		74287DAE2A5348310084CF97 /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DAD2A5348310084CF97 /* MealDetailViewModel.swift */; };
 		74287DB02A5348EA0084CF97 /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DAF2A5348EA0084CF97 /* MealDetail.swift */; };
 		74287DB32A54CAC80084CF97 /* CartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB22A54CAC80084CF97 /* CartCardView.swift */; };
-		74287DB62A5756D90084CF97 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB52A5756D90084CF97 /* CartViewModel.swift */; };
+		74287DB62A5756D90084CF97 /* CartCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB52A5756D90084CF97 /* CartCardViewModel.swift */; };
 		74287DB82A5B0E580084CF97 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB72A5B0E580084CF97 /* Bundle.swift */; };
 		74287DBD2A5B294A0084CF97 /* FilterMealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */; };
 		74287DBF2A5B2E060084CF97 /* MealsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 74287DBE2A5B2D070084CF97 /* MealsMock.json */; };
@@ -104,7 +104,7 @@
 		74287DAD2A5348310084CF97 /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
 		74287DAF2A5348EA0084CF97 /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
 		74287DB22A54CAC80084CF97 /* CartCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCardView.swift; sourceTree = "<group>"; };
-		74287DB52A5756D90084CF97 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		74287DB52A5756D90084CF97 /* CartCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCardViewModel.swift; sourceTree = "<group>"; };
 		74287DB72A5B0E580084CF97 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMealModel.swift; sourceTree = "<group>"; };
 		74287DBE2A5B2D070084CF97 /* MealsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MealsMock.json; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 		74287DB42A5756D10084CF97 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				74287DB52A5756D90084CF97 /* CartViewModel.swift */,
+				74287DB52A5756D90084CF97 /* CartCardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -764,7 +764,7 @@
 				749CFB532A3F68AD00380161 /* AuthenticationManager.swift in Sources */,
 				74287DBD2A5B294A0084CF97 /* FilterMealModel.swift in Sources */,
 				74B6C9832A4C9A7200882D6B /* Double.swift in Sources */,
-				74287DB62A5756D90084CF97 /* CartViewModel.swift in Sources */,
+				74287DB62A5756D90084CF97 /* CartCardViewModel.swift in Sources */,
 				74B6C98B2A50A80900882D6B /* CustomFontConstants.swift in Sources */,
 				749CFB782A41DB4F00380161 /* CategoryCardView.swift in Sources */,
 				749CFB632A41D0F700380161 /* TabBar.swift in Sources */,

@@ -11,21 +11,21 @@ import RealmSwift
 
 class CartModel: Object, ObjectKeyIdentifiable {
     
-    @Persisted(primaryKey: true) var _id: String
+    @Persisted(primaryKey: true) var id: String
     @Persisted var name: String
 //    @Persisted var areaAndCategory: String
     @Persisted var imageUrl: String
     @Persisted var price: Double
-    @Persisted var offset: Double
-    @Persisted var isSwiped: Bool
+    @Persisted var quantity: Int
+    
 
-    convenience init(name: String, imgUrl: String, price: Double) {
+    convenience init(id: String,name: String, imgUrl: String, price: Double, quantity: Int) {
         self.init()
+        self.id = id
         self.name = name
 //        self.areaAndCategory = areaAndCategory
         self.imageUrl = imgUrl
         self.price = price
-        self.offset = 0
-        self.isSwiped = false
+        self.quantity = quantity
     }
 }

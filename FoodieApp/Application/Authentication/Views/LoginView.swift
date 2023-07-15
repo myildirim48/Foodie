@@ -36,7 +36,7 @@ struct LoginView: View {
                     //                    ResetPasswordView(email: $email)
                 } label: {
                     Text("Forgot password?")
-                        .font(.custom(CustomFont.semiBold,size: 30))
+                        .font(.custom(CustomFont.semiBold,size: 14))
                         .foregroundColor(.black)
                         .padding([.top,.bottom])
                 }
