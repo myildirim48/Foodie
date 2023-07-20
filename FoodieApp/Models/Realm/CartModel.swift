@@ -9,13 +9,26 @@ import Foundation
 import SwiftUI
 import RealmSwift
 
-class CartModel: Object, ObjectKeyIdentifiable {
-    
+
+class RealmModel: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var id: String
     @Persisted var name: String
-//    @Persisted var areaAndCategory: String
     @Persisted var imageUrl: String
     @Persisted var price: Double
+    
+
+    convenience init(id: String,name: String, imgUrl: String, price: Double) {
+        self.init()
+        self.id = id
+        self.name = name
+        self.imageUrl = imgUrl
+        self.price = price
+    }
+    
+}
+
+class CartModel: RealmModel {
+//    @Persisted var areaAndCategory: String
     @Persisted var quantity: Int
     
 

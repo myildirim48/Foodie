@@ -1,5 +1,5 @@
 //
-//  CartCardView.swift
+//  CustomSwipeCardView.swift
 //  FoodieApp
 //
 //  Created by YILDIRIM on 5.07.2023.
@@ -7,16 +7,20 @@
 
 import SwiftUI
 
-struct CartCardView: View {
+struct CustomSwipeCardView: View {
+    
+   
     @State var quantity: Int = 1
     
 //    For real time update
-    @State var meal: CartModel
+    @State var meal: RealmModel
     @State private var offset: CGFloat = 0.0
     @State private var isSwiped: Bool = false
     
-    @StateObject var viewModel: CartCardViewModel
-    
+    @State var deleteAction: () -> Void
+    @State var onChange: () -> Void
+    @State var hasStepper = false
+        
     var price: (leftPart: Int, rightPart: Int)  {
         get {
             (Double(quantity) * meal.price).splitIntoParts(decimalPlaces: 2, round: true)
@@ -34,7 +38,9 @@ struct CartCardView: View {
                 Spacer()
                 
                 Button(action: {
-                    withAnimation(.easeIn){deleteItem()}
+                    withAnimation(.easeIn) {
+                        deleteItem()
+                    }
                 }) {
                     Image(systemName: "trash")
                         .font(.title)
@@ -70,14 +76,17 @@ struct CartCardView: View {
                     
                 }
                 
-                CustomStepper(value: $quantity, range: 1...10) { }
-                
-                
+                if hasStepper {
+                    CustomStepper(value: $quantity, range: 1...10) { }
+                } else {
+                    Spacer()
+                }
                 
             }.background(.white)
             .offset(x: offset)
             .onChange(of: quantity, perform: { _ in
-                viewModel.calculateTotalPrice()
+//                viewModel.calculateTotalPrice()
+                onChange()
             })
             .gesture(DragGesture().onChanged(onChanged(value:)).onEnded(onEnd(value:)))
         }.padding(.bottom,5)
@@ -121,17 +130,11 @@ struct CartCardView: View {
     // Removing Item
     func deleteItem() {
         
-        viewModel.deleteFromRealm(meal: meal)
+        deleteAction()
+//        viewModel.deleteFromRealm(meal: meal)
         
 //        meals.removeAll { (meal) -> Bool in
 //            return self.meal.id == meal.id
 //        }
     }
 }
-//
-//struct CartCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CartCardView(meal: <#T##Binding<CartModel>#>, meals: <#T##Binding<[CartModel]>#>)
-//    }
-//
-//}
