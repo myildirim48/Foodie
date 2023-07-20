@@ -28,8 +28,12 @@ struct CartView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(spacing: 0) {
                     ForEach(cartItems) { meal in
-                        CartCardView(meal: meal, viewModel: viewModel)
-                            .padding(.horizontal)
+                        
+                        CustomSwipeCardView(meal: meal, deleteAction: {
+                            viewModel.deleteFromRealm(meal: meal)
+                        }, onChange: {
+                            viewModel.calculateTotalPrice()
+                        }, hasStepper: true)                            .padding(.horizontal)
                     }
                 }
             }

@@ -92,7 +92,7 @@ struct MealDetailView: View {
             //                Favorite button
             Button {
                 //TODO: - Add favorites
-
+                viewModel.addToFavorites(price: priceDouble)
             } label: {
                 
                 RoundedRectangle(cornerRadius: 8)

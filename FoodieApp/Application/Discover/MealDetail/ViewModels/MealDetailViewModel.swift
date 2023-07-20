@@ -16,12 +16,34 @@ extension MealDetailView {
         private var service: NetworkService
         @Published var meal: [String:String?] = [:]
         @ObservedResults(CartModel.self) private var cartItems
+        @ObservedResults(RealmModel.self) private var favorites
         
         init(service: NetworkService) {
             self.service = service
         }
         
 //MARK: - Realm
+        func addToFavorites(price:Double) {
+            do {
+                let realm = try! Realm()
+                print("User Realm User file location: \(realm.configuration.fileURL!.path)")
+                guard let objectToUpdate = realm.object(ofType: RealmModel.self, forPrimaryKey: id) else {
+                    
+                    let newCartItem = RealmModel(id: id, name: name, imgUrl: imgUrl, price: price)
+                    $favorites.append(newCartItem)
+                    return
+                }
+                
+                try realm.write({
+                    realm.delete(objectToUpdate)
+                })
+                
+                print("Saved")
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+                    
         func addToCart(price: Double) {
                 do {
                     let realm = try! Realm()
