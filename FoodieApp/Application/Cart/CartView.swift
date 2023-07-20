@@ -21,70 +21,11 @@ struct CartView: View {
             Spacer()
             
             if cartItems.isEmpty {
-                emptyView
+                FoodieEmptyView(toWhere: .cart)
                 Spacer()
-            }
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                LazyVStack(spacing: 0) {
-                    ForEach(cartItems) { meal in
-                        
-                        CustomSwipeCardView(meal: meal, deleteAction: {
-                            viewModel.deleteFromRealm(meal: meal)
-                        }, onChange: {
-                            viewModel.calculateTotalPrice()
-                        }, hasStepper: true)                            .padding(.horizontal)
-                    }
-                }
-            }
-            
-            VStack {
-                
-                VStack {
-                    HStack {
-                        Text("Sub Total")
-                            .font(.custom(CustomFont.regular, size: 16))
-                        Spacer()
-                        Text( "$" + String(format: "%.2f", viewModel.totalPrice))
-                            .font(.custom(CustomFont.bold, size: 16))
-                    }
-                    HStack {
-                        Text("Delivery Charge")
-                            .font(.custom(CustomFont.regular, size: 16))
-                        Spacer()
-                        Text("$3")
-                            .font(.custom(CustomFont.bold, size: 16))
-                    }
-                    Divider()
-                    HStack {
-                        Text("Total")
-                            .font(.custom(CustomFont.regular, size: 16))
-                        Spacer()
-                        
-                        Text( "$" + String(format: "%.2f", viewModel.totalPrice + 3.0))
-                            .font(.custom(CustomFont.bold, size: 16))
-                    }
-                }
-                .padding()
-                .overlay {
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 1)
-                        .foregroundColor(.gray)
-                    
-                }
-                .padding()
-                
-                Button {
-                    
-                } label: {
-                    Text("Place my order")
-                        .font(.custom(CustomFont.bold, size: 16))
-                        .foregroundColor(.white)
-                        .frame(width: 350, height: 50)
-                        .background(.black)
-                        .cornerRadius(8)
-                }
-                
+            } else {
+                scrollableFoodsView
+                totalPriceView
             }
         }.onAppear {
             showTabbar = false
@@ -123,17 +64,68 @@ struct CartView: View {
             Spacer()
         }.padding()
     }
-    var emptyView: some View {
+    var scrollableFoodsView: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            LazyVStack(spacing: 0) {
+                ForEach(cartItems) { meal in
+                    CustomSwipeCardView(meal: meal, deleteAction: {
+                        viewModel.deleteFromRealm(meal: meal)
+                    }, onChange: {
+                        viewModel.calculateTotalPrice()
+                    }, hasStepper: true)
+                    .padding(.horizontal)
+                }
+            }
+        }
+    }
+    var totalPriceView: some View {
         VStack {
-            Image("empty")
             
+            VStack {
+                HStack {
+                    Text("Sub Total")
+                        .font(.custom(CustomFont.regular, size: 16))
+                    Spacer()
+                    Text( "$" + String(format: "%.2f", viewModel.totalPrice))
+                        .font(.custom(CustomFont.bold, size: 16))
+                }
+                HStack {
+                    Text("Delivery Charge")
+                        .font(.custom(CustomFont.regular, size: 16))
+                    Spacer()
+                    Text("$3")
+                        .font(.custom(CustomFont.bold, size: 16))
+                }
+                Divider()
+                HStack {
+                    Text("Total")
+                        .font(.custom(CustomFont.regular, size: 16))
+                    Spacer()
+                    
+                    Text( "$" + String(format: "%.2f", viewModel.totalPrice + 3.0))
+                        .font(.custom(CustomFont.bold, size: 16))
+                }
+            }
+            .padding()
+            .overlay {
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(lineWidth: 1)
+                    .foregroundColor(.gray)
+                
+            }
+            .padding()
             
-            Text("Empty")
-                .font(.custom(CustomFont.semiBold, size: 24))
+            Button {
+                
+            } label: {
+                Text("Place my order")
+                    .font(.custom(CustomFont.bold, size: 16))
+                    .foregroundColor(.white)
+                    .frame(width: 350, height: 50)
+                    .background(.black)
+                    .cornerRadius(8)
+            }
             
-            Text("You don't have any foods in cart at this time")
-                .font(.custom(CustomFont.regular, size: 14))
-                .foregroundColor(.gray)
         }
     }
 }

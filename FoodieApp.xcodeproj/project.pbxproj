@@ -17,6 +17,7 @@
 		74287DB82A5B0E580084CF97 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB72A5B0E580084CF97 /* Bundle.swift */; };
 		74287DBD2A5B294A0084CF97 /* FilterMealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */; };
 		74287DBF2A5B2E060084CF97 /* MealsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 74287DBE2A5B2D070084CF97 /* MealsMock.json */; };
+		742CDE292A69BF9D008CFBF7 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CDE282A69BF9D008CFBF7 /* EmptyView.swift */; };
 		74335FCF2A61CEBC00BE680C /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74335FCE2A61CEBC00BE680C /* CartModel.swift */; };
 		74335FD22A61E2CB00BE680C /* MealCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74335FD12A61E2CB00BE680C /* MealCardViewModel.swift */; };
 		749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */; };
@@ -69,7 +70,6 @@
 		74B6C98B2A50A80900882D6B /* CustomFontConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6C98A2A50A80900882D6B /* CustomFontConstants.swift */; };
 		74B6C9902A51C4AA00882D6B /* PortionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6C98F2A51C4AA00882D6B /* PortionButton.swift */; };
 		74B6C9942A51CEE000882D6B /* PortionButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6C9932A51CEE000882D6B /* PortionButtonViewModel.swift */; };
-		74B6C9962A51DFF700882D6B /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6C9952A51DFF700882D6B /* CustomStepper.swift */; };
 		74B7D3042A42DC4200A43A45 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7D3032A42DC4200A43A45 /* SideMenu.swift */; };
 		74B7D30C2A44CE8000A43A45 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7D30B2A44CE8000A43A45 /* Endpoint.swift */; };
 		74B7D30E2A44CE9800A43A45 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7D30D2A44CE9800A43A45 /* HTTPClient.swift */; };
@@ -81,6 +81,8 @@
 		74B7D31B2A45978200A43A45 /* DiscoverCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7D31A2A45978200A43A45 /* DiscoverCategoriesViewModel.swift */; };
 		74B7D31D2A45A1EE00A43A45 /* LoadableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7D31C2A45A1EE00A43A45 /* LoadableImage.swift */; };
 		74E968D62A68C9E900C8BF8A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74E968D82A68C9E900C8BF8A /* Info.plist */; };
+		74E968DC2A68D24400C8BF8A /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E968DB2A68D24400C8BF8A /* CustomStepper.swift */; };
+		74E968DE2A68D25300C8BF8A /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E968DD2A68D25300C8BF8A /* CustomStepper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,7 @@
 		74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMealModel.swift; sourceTree = "<group>"; };
 		74287DBE2A5B2D070084CF97 /* MealsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MealsMock.json; sourceTree = "<group>"; };
 		74287DC02A5B50390084CF97 /* FilteredMealMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FilteredMealMock.json; sourceTree = "<group>"; };
+		742CDE282A69BF9D008CFBF7 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		74335FCE2A61CEBC00BE680C /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		74335FD12A61E2CB00BE680C /* MealCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCardViewModel.swift; sourceTree = "<group>"; };
 		749CFADB2A3DBA7D00380161 /* FoodieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,7 +165,6 @@
 		74B6C98A2A50A80900882D6B /* CustomFontConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontConstants.swift; sourceTree = "<group>"; };
 		74B6C98F2A51C4AA00882D6B /* PortionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionButton.swift; sourceTree = "<group>"; };
 		74B6C9932A51CEE000882D6B /* PortionButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionButtonViewModel.swift; sourceTree = "<group>"; };
-		74B6C9952A51DFF700882D6B /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
 		74B7D3032A42DC4200A43A45 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		74B7D30B2A44CE8000A43A45 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		74B7D30D2A44CE9800A43A45 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -174,6 +176,8 @@
 		74B7D31A2A45978200A43A45 /* DiscoverCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCategoriesViewModel.swift; sourceTree = "<group>"; };
 		74B7D31C2A45A1EE00A43A45 /* LoadableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableImage.swift; sourceTree = "<group>"; };
 		74E968D72A68C9E900C8BF8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		74E968DB2A68D24400C8BF8A /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
+		74E968DD2A68D25300C8BF8A /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +307,7 @@
 				749CFB752A41D61900380161 /* SearchBar.swift */,
 				74B7D31C2A45A1EE00A43A45 /* LoadableImage.swift */,
 				74B6C9842A4CB7E800882D6B /* StraggledGridView.swift */,
+				742CDE282A69BF9D008CFBF7 /* EmptyView.swift */,
 			);
 			path = ResuableItems;
 			sourceTree = "<group>";
@@ -513,7 +518,8 @@
 			isa = PBXGroup;
 			children = (
 				74B6C9872A50309700882D6B /* MealDetailView.swift */,
-				74B6C9952A51DFF700882D6B /* CustomStepper.swift */,
+				74E968DB2A68D24400C8BF8A /* CustomStepper.swift */,
+				74E968DD2A68D25300C8BF8A /* CustomStepper.swift */,
 				74B6C98F2A51C4AA00882D6B /* PortionButton.swift */,
 			);
 			path = Views;
@@ -736,7 +742,7 @@
 				74B7D30E2A44CE9800A43A45 /* HTTPClient.swift in Sources */,
 				74B6C97D2A4B295C00882D6B /* MealsViewModel.swift in Sources */,
 				749CFB662A41D32A00380161 /* DiscoverCategoriesView.swift in Sources */,
-				74B6C9962A51DFF700882D6B /* CustomStepper.swift in Sources */,
+				742CDE292A69BF9D008CFBF7 /* EmptyView.swift in Sources */,
 				749CFB142A3DDC9700380161 /* OnboardingManager.swift in Sources */,
 				749CFB172A3E3A1300380161 /* LoginView.swift in Sources */,
 				749CFB602A4060D700380161 /* CustomTabbar.swift in Sources */,
@@ -750,6 +756,8 @@
 				749CFB762A41D61900380161 /* SearchBar.swift in Sources */,
 				749CFB0C2A3DD24B00380161 /* OnboardingButton.swift in Sources */,
 				74B6C9852A4CB7E800882D6B /* StraggledGridView.swift in Sources */,
+				74E968DC2A68D24400C8BF8A /* CustomStepper.swift in Sources */,
+				74E968DE2A68D25300C8BF8A /* CustomStepper.swift in Sources */,
 				749CFB5D2A40523C00380161 /* User.swift in Sources */,
 				74B7D3042A42DC4200A43A45 /* SideMenu.swift in Sources */,
 				749CFB122A3DDC5300380161 /* OnboardingView.swift in Sources */,
