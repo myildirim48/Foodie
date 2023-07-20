@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomStepper<Label: View>: View {
+struct CustomaStepper<Label: View>: View {
     @Binding var value: Int
     var range: ClosedRange<Int> // todo
     @ViewBuilder var label: Label 
