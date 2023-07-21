@@ -17,8 +17,8 @@ struct CustomSwipeCardView: View {
     @State private var offset: CGFloat = 0.0
     @State private var isSwiped: Bool = false
     
-    @State var deleteAction: () -> Void
-    @State var onChange: () -> Void
+    @State var deleteAction: () -> Void = { }
+    @State var onChange: () -> Void = { }
     @State var hasStepper = false
         
     var price: (leftPart: Int, rightPart: Int)  {

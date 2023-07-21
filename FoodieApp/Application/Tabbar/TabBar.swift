@@ -26,7 +26,7 @@ struct TabBar: View {
             case .cart:
                 CartView(showTabbar: $showTabbar)
             case .favorites:
-                FavoritesView()
+                FavoritesView(showTabbar: $showTabbar)
             case .notifications:
                 NotificationView()
             }

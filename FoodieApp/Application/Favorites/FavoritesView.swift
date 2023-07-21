@@ -10,6 +10,7 @@ import RealmSwift
 
 struct FavoritesView: View {
     @ObservedResults(RealmModel.self) var favorites
+    @Binding var showTabbar: Bool
 
     var body: some View {
         NavigationStack {
@@ -20,7 +21,7 @@ struct FavoritesView: View {
                         .padding([.leading,.top],24)
                     Spacer()
                 }
-            
+                
                 if favorites.isEmpty {
                     Spacer()
                     FoodieEmptyView(toWhere: .favorites)
@@ -30,17 +31,24 @@ struct FavoritesView: View {
                 }
             }
         }
+        .onAppear { showTabbar = true }
+
     }
     
     var scrollableFavoritesView: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack(spacing: 0) {
                 ForEach(favorites) { meal in
-                    CustomSwipeCardView(meal: meal, deleteAction: {
-                        deleteFromRealm(meal: meal)
-                    }, onChange: {
-                    })
-                    .padding(.horizontal)
+                    NavigationLink {
+                        MealDetailView(priceDouble: meal.price,
+                                       mealId: meal.id,
+                                       showTabbar: $showTabbar)
+                    } label: {
+                        CustomSwipeCardView(meal: meal,
+                                            deleteAction: { deleteFromRealm(meal: meal) })
+                            .padding(.horizontal)
+                    }
+
                 }
             }
         }
@@ -61,6 +69,6 @@ struct FavoritesView: View {
 
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritesView()
+        FavoritesView(showTabbar: .constant(true))
     }
 }

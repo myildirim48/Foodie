@@ -16,23 +16,22 @@ struct CartView: View {
     @StateObject private var viewModel = CartCardViewModel()
     
     var body: some View {
-        VStack {
-            headerview
-            Spacer()
-            
-            if cartItems.isEmpty {
-                FoodieEmptyView(toWhere: .cart)
+        NavigationStack {
+            VStack {
+                headerview
                 Spacer()
-            } else {
-                scrollableFoodsView
-                totalPriceView
+                
+                if cartItems.isEmpty {
+                    FoodieEmptyView(toWhere: .cart)
+                    Spacer()
+                } else {
+                    scrollableFoodsView
+                    totalPriceView
+                }
             }
-        }.onAppear {
-            showTabbar = false
         }
-        .onTapGesture {
-            showTabbar = false
-        }
+        .onAppear { showTabbar = true }
+        .onTapGesture { showTabbar.toggle() }
     }
     
     var headerview: some View {
@@ -68,12 +67,16 @@ struct CartView: View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack(spacing: 0) {
                 ForEach(cartItems) { meal in
-                    CustomSwipeCardView(meal: meal, deleteAction: {
-                        viewModel.deleteFromRealm(meal: meal)
-                    }, onChange: {
-                        viewModel.calculateTotalPrice()
-                    }, hasStepper: true)
-                    .padding(.horizontal)
+                    NavigationLink {
+                        MealDetailView(priceDouble: meal.price, mealId: meal.id, showTabbar: $showTabbar)
+                    } label: {
+                        CustomSwipeCardView(meal: meal,
+                                            deleteAction: { viewModel.deleteFromRealm(meal: meal) },
+                                            onChange: { viewModel.calculateTotalPrice() },
+                                            hasStepper: true)
+                        .padding(.horizontal)
+                    }
+
                 }
             }
         }
@@ -124,6 +127,7 @@ struct CartView: View {
                     .frame(width: 350, height: 50)
                     .background(.black)
                     .cornerRadius(8)
+                    .padding(.bottom, showTabbar ? 60 : 0)
             }
             
         }

@@ -21,7 +21,6 @@ struct FoodieEmptyView: View {
             VStack {
                 Image("empty")
                 
-                
                 Text("Empty")
                     .font(.custom(CustomFont.semiBold, size: 24))
                 
@@ -29,6 +28,7 @@ struct FoodieEmptyView: View {
                     .font(.custom(CustomFont.regular, size: 14))
                     .foregroundColor(.gray)
             }
+            
     }
 }
 

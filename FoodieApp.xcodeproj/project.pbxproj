@@ -17,7 +17,7 @@
 		74287DB82A5B0E580084CF97 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB72A5B0E580084CF97 /* Bundle.swift */; };
 		74287DBD2A5B294A0084CF97 /* FilterMealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */; };
 		74287DBF2A5B2E060084CF97 /* MealsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 74287DBE2A5B2D070084CF97 /* MealsMock.json */; };
-		742CDE292A69BF9D008CFBF7 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CDE282A69BF9D008CFBF7 /* EmptyView.swift */; };
+		742CDE292A69BF9D008CFBF7 /* FoodieEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CDE282A69BF9D008CFBF7 /* FoodieEmptyView.swift */; };
 		74335FCF2A61CEBC00BE680C /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74335FCE2A61CEBC00BE680C /* CartModel.swift */; };
 		74335FD22A61E2CB00BE680C /* MealCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74335FD12A61E2CB00BE680C /* MealCardViewModel.swift */; };
 		749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */; };
@@ -112,7 +112,7 @@
 		74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMealModel.swift; sourceTree = "<group>"; };
 		74287DBE2A5B2D070084CF97 /* MealsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MealsMock.json; sourceTree = "<group>"; };
 		74287DC02A5B50390084CF97 /* FilteredMealMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FilteredMealMock.json; sourceTree = "<group>"; };
-		742CDE282A69BF9D008CFBF7 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		742CDE282A69BF9D008CFBF7 /* FoodieEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieEmptyView.swift; sourceTree = "<group>"; };
 		74335FCE2A61CEBC00BE680C /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		74335FD12A61E2CB00BE680C /* MealCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCardViewModel.swift; sourceTree = "<group>"; };
 		749CFADB2A3DBA7D00380161 /* FoodieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,7 +307,7 @@
 				749CFB752A41D61900380161 /* SearchBar.swift */,
 				74B7D31C2A45A1EE00A43A45 /* LoadableImage.swift */,
 				74B6C9842A4CB7E800882D6B /* StraggledGridView.swift */,
-				742CDE282A69BF9D008CFBF7 /* EmptyView.swift */,
+				742CDE282A69BF9D008CFBF7 /* FoodieEmptyView.swift */,
 			);
 			path = ResuableItems;
 			sourceTree = "<group>";
@@ -742,7 +742,7 @@
 				74B7D30E2A44CE9800A43A45 /* HTTPClient.swift in Sources */,
 				74B6C97D2A4B295C00882D6B /* MealsViewModel.swift in Sources */,
 				749CFB662A41D32A00380161 /* DiscoverCategoriesView.swift in Sources */,
-				742CDE292A69BF9D008CFBF7 /* EmptyView.swift in Sources */,
+				742CDE292A69BF9D008CFBF7 /* FoodieEmptyView.swift in Sources */,
 				749CFB142A3DDC9700380161 /* OnboardingManager.swift in Sources */,
 				749CFB172A3E3A1300380161 /* LoginView.swift in Sources */,
 				749CFB602A4060D700380161 /* CustomTabbar.swift in Sources */,

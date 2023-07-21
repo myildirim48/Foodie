@@ -48,22 +48,15 @@ struct MealDetailView: View {
             }
             addToCart
         }
-        .task {
-            await viewModel.getMaealDetail(id: mealId)
-        }
-        .onAppear {
-            showTabbar = false
-        }
-        .onDisappear {
-            showTabbar = true
-        }.navigationBarHidden(true)
-        
-        
+        .task { await viewModel.getMaealDetail(id: mealId) }
+        .onAppear { showTabbar = false }
+        .navigationBarHidden(true)
     }
     var headerView: some View {
         HStack {
             //                Back button
             Button {
+                showTabbar = true
                 dismiss()
             } label: {
                 RoundedRectangle(cornerRadius: 8)
