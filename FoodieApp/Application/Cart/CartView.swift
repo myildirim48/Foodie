@@ -11,6 +11,7 @@ import RealmSwift
 struct CartView: View {
     @Environment(\.dismiss) var dismiss
     @Binding var showTabbar: Bool
+    @Binding var callBack: Tab
     
     @ObservedResults(CartModel.self) var cartItems
     @StateObject private var viewModel = CartCardViewModel()
@@ -30,14 +31,23 @@ struct CartView: View {
                 }
             }
         }
-        .onAppear { showTabbar = true }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                showTabbar = false
+            }
+            
+        }
         .onTapGesture { showTabbar.toggle() }
     }
-    
+    //MARK: - Headerview
     var headerview: some View {
         HStack {
+//            Backbutton
             Button {
-                showTabbar = true
+                DispatchQueue.main.async {
+                    showTabbar = true
+                }
+                callBack = .discover
             } label: {
                 RoundedRectangle(cornerRadius: 8)
                     .foregroundColor(.clear)
@@ -63,6 +73,7 @@ struct CartView: View {
             Spacer()
         }.padding()
     }
+    //MARK: - Scrollable Foods view
     var scrollableFoodsView: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack(spacing: 0) {
@@ -81,6 +92,7 @@ struct CartView: View {
             }
         }
     }
+    //MARK: -  Total Price view
     var totalPriceView: some View {
         VStack {
             
@@ -117,9 +129,10 @@ struct CartView: View {
                 
             }
             .padding()
-            
+
             Button {
-                
+                //TODO: - Place my order button
+
             } label: {
                 Text("Place my order")
                     .font(.custom(CustomFont.bold, size: 16))
@@ -136,6 +149,6 @@ struct CartView: View {
 
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
-        CartView(showTabbar: .constant(true))
+        CartView(showTabbar: .constant(true), callBack: .constant(.cart))
     }
 }

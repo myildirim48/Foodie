@@ -20,21 +20,26 @@ struct TabBar: View {
             switch tabSelected {
             case .discover:
                 DiscoverCategoriesView(showTabbar: $showTabbar)
+                    .transition(.move(edge: .leading))
             case .location:
                 LocationView()
+                    .transition(.move(edge: .leading))
                     .environmentObject(session)
             case .cart:
-                CartView(showTabbar: $showTabbar)
+                CartView(showTabbar: $showTabbar, callBack: $tabSelected)
+                    .transition(.move(edge: .leading))
             case .favorites:
                 FavoritesView(showTabbar: $showTabbar)
+                    .transition(.move(edge: .leading))
             case .notifications:
                 NotificationView()
+                    .transition(.move(edge: .leading))
             }
             if showTabbar {
                 VStack {
                     Spacer()
                     CustomTabbar(selectedTab: $tabSelected)
-
+                        .transition(.slide)
                 }
             }
         }

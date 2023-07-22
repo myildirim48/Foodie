@@ -14,6 +14,7 @@ enum Tab: String, CaseIterable {
     case favorites
     case notifications
 }
+
 struct CustomTabbar: View {
     @Binding var selectedTab: Tab
     
@@ -42,7 +43,6 @@ struct CustomTabbar: View {
                .background(.thinMaterial)
                .cornerRadius(20)
                .padding(.horizontal)
-            
         }
     }
 }
