@@ -32,8 +32,6 @@ extension MealCardView {
                         realm.delete(objectToUpdate)
                         savedToCart = false
                     })
-                    
-                    print("Saved")
                 } catch {
                     print(error.localizedDescription)
                 }

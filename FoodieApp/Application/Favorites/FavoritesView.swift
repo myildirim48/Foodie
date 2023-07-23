@@ -32,7 +32,6 @@ struct FavoritesView: View {
             }
         }
         .onAppear { showTabbar = true }
-
     }
     
     var scrollableFavoritesView: some View {
@@ -40,8 +39,7 @@ struct FavoritesView: View {
             LazyVStack(spacing: 0) {
                 ForEach(favorites) { meal in
                     NavigationLink {
-                        MealDetailView(priceDouble: meal.price,
-                                       mealId: meal.id,
+                        MealDetailView(meal: meal.convertToMealCategory(),
                                        showTabbar: $showTabbar)
                     } label: {
                         CustomSwipeCardView(meal: meal,

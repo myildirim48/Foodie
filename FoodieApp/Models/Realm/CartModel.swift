@@ -25,14 +25,16 @@ class RealmModel: Object, ObjectKeyIdentifiable {
         self.price = price
     }
     
+    func convertToMealCategory() -> MealCategories {
+        return MealCategories(id: self.id , strMeal: self.name, strMealThumb: self.imageUrl)
+    }
 }
 
 class CartModel: RealmModel {
 //    @Persisted var areaAndCategory: String
     @Persisted var quantity: Int
-    
 
-    convenience init(id: String,name: String, imgUrl: String, price: Double, quantity: Int) {
+    convenience init(id: String, name: String, imgUrl: String, price: Double, quantity: Int) {
         self.init()
         self.id = id
         self.name = name

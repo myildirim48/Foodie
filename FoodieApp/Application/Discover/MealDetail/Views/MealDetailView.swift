@@ -10,8 +10,7 @@ import SwiftUI
 struct MealDetailView: View {
     @State private var selectedPortion: PortionButtonViewModel = .small
     @State private var quantity: Int = 1
-    @State var priceDouble: Double
-    @State var mealId: String
+    @State var meal: MealCategories
     
     @Binding var showTabbar: Bool
     @Environment(\.dismiss) var dismiss
@@ -19,7 +18,7 @@ struct MealDetailView: View {
     
     private var priceSided: (leftPart: Int, rightPart: Int) {
         get {
-            ((priceDouble * selectedPortion.doublePrice) * Double(quantity)).splitIntoParts(decimalPlaces: 2, round: true)
+            ((meal.price * selectedPortion.doublePrice) * Double(quantity)).splitIntoParts(decimalPlaces: 2, round: true)
         }
 //        Calculating the price with portion and quantity
     }
@@ -48,7 +47,7 @@ struct MealDetailView: View {
             }
             addToCart
         }
-        .task { await viewModel.getMaealDetail(id: mealId) }
+        .task { await viewModel.getMaealDetail(id: meal.id) }
         .onAppear { showTabbar = false }
         .navigationBarHidden(true)
     }
@@ -85,7 +84,7 @@ struct MealDetailView: View {
             //                Favorite button
             Button {
                 //TODO: - Add favorites
-                viewModel.addToFavorites(price: priceDouble)
+                viewModel.addToFavorites(price: meal.price)
             } label: {
                 
                 RoundedRectangle(cornerRadius: 8)
@@ -196,7 +195,7 @@ struct MealDetailView: View {
             Spacer()
             
             Button {
-                viewModel.addToCart(price: priceDouble)
+                viewModel.addToCart(price: meal.price)
             } label: {
                 Text("Add to cart")
                     .font(.custom(CustomFont.bold, size: 16))
@@ -216,6 +215,6 @@ struct MealDetailView: View {
 
 struct MealDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MealDetailView(priceDouble: 5.0, mealId: "123", showTabbar: .constant(true))
+        MealDetailView(meal: MealCategories.init(id: "", strMeal: "", strMealThumb: ""),showTabbar: .constant(true))
     }
 }
