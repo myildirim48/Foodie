@@ -25,13 +25,11 @@ struct MealsView: View {
             //        %90 left side will be with meals
                         StaggeredGrid(list: viewModel.meals, columns: 2) { meal in
                             NavigationLink {
-                                MealDetailView(priceDouble: meal.price, mealId: meal.id, showTabbar: $showTabbar)
-
+                                MealDetailView(meal: meal,
+                                               showTabbar: $showTabbar)
                             } label: {
                                 MealCardView(meal: meal)
                             }
-
-                                
                         }.padding([.leading, .trailing], 10)
                         .padding(.bottom, 60)
               

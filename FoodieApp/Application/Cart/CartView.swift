@@ -79,7 +79,7 @@ struct CartView: View {
             LazyVStack(spacing: 0) {
                 ForEach(cartItems) { meal in
                     NavigationLink {
-                        MealDetailView(priceDouble: meal.price, mealId: meal.id, showTabbar: $showTabbar)
+                        MealDetailView(meal: meal.convertToMealCategory(), showTabbar: $showTabbar)
                     } label: {
                         CustomSwipeCardView(meal: meal,
                                             deleteAction: { viewModel.deleteFromRealm(meal: meal) },

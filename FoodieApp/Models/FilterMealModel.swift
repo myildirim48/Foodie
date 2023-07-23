@@ -11,18 +11,13 @@ struct FilterMealModel: Codable {
         let meals: [MealCategories]
     }
 
-struct MealCategories: Codable, Identifiable, Hashable {
+struct MealCategories: MealModelProtocol, Codable, Identifiable, Hashable {
     
-    let strMeal: String
-    let strMealThumb: String
-    let id: String
+    var id: String
+    var strMeal: String
+    var strMealThumb: String
     
     var price = Double.random(in: 3...25)
-    
-    func priceUI() -> (leftPart: Int, rightPart: Int) {
-        return price.splitIntoParts(decimalPlaces: 2, round: true)
-    }
-    
     
     public func hash(into hasher: inout Hasher) {
           return hasher.combine(id)
@@ -32,9 +27,6 @@ struct MealCategories: Codable, Identifiable, Hashable {
         return lhs.id == rhs.id
     }
     
-    
-    
-    // MARK: - Enumerations
     enum CodingKeys: String, CodingKey {
         case id = "idMeal"
         case strMeal, strMealThumb

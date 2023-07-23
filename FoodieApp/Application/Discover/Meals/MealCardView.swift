@@ -13,8 +13,7 @@ struct MealCardView: View {
     @StateObject private var viewModel = MealCardViewModel()
     
     var body: some View {
-
-        VStack{
+        VStack {
             Text(meal.strMeal)
                 .font(.custom(CustomFont.semiBold,size: 16))
                 .lineLimit(3)
@@ -25,15 +24,15 @@ struct MealCardView: View {
             
             HStack {
 //                Price
-                Text("$\(meal.priceUI().leftPart)")
+                Text("$\(meal.convertPriceDoubleToUI().leftPart)")
                     .font(.custom(CustomFont.semiBold,size: 20))
                 +
-                Text(".\(meal.priceUI().rightPart)")
+                Text(".\(meal.convertPriceDoubleToUI().rightPart)")
                     .font(.custom(CustomFont.semiBold,size: 16))
                     .foregroundColor(.gray)
+                
 //                add to cart button
                 Button {
-//                    TODO: add to cart
                     viewModel.addToCart(meal: meal)
                 } label: {
                     VStack {
