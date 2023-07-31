@@ -40,7 +40,6 @@ final class AuthenticationViewModel: ObservableObject {
             print("No email or password, name found.")
             return
         }
-        
             showLoading.toggle()
         
         Task {

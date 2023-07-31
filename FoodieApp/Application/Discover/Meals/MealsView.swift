@@ -11,6 +11,8 @@ struct MealsView: View {
     @State var selectedCate: CategoryResult
     @StateObject private var viewModel = MealsViewModel(service: NetworkService())
     @Binding var showTabbar: Bool
+    @State private var searchTerm = ""
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -18,12 +20,15 @@ struct MealsView: View {
                 VStack(alignment: .leading) {
                     Text("What would you like to order.")
                         .font(.custom(CustomFont.bold,size: 30))
-                    SearchBar(searchText: .constant(""))
+                    SearchBar(searchText: $searchTerm)
                 }.padding()
+                    .onChange(of: searchTerm) { newSearchQuery in
+                        viewModel.searchtext = newSearchQuery
+                    }
                 
                 HStack {
             //        %90 left side will be with meals
-                        StaggeredGrid(list: viewModel.meals, columns: 2) { meal in
+                        StaggeredGrid(list: viewModel.mealSearchable, columns: 2) { meal in
                             NavigationLink {
                                 MealDetailView(meal: meal,
                                                showTabbar: $showTabbar)
@@ -34,25 +39,27 @@ struct MealsView: View {
                         .padding(.bottom, 60)
               
                     //        Scrollable side menu
-                    VStack {
-                            ScrollView(showsIndicators: false) {
-                                ForEach(viewModel.categories, id:\.self) { category in
-                                    MenuItem(category: category, selectedCategory: $selectedCate)
-                                        .onTapGesture {
-                                            withAnimation(.linear) {
-                                                selectedCate = category
-                                            }
-                                            Task {
-                                                await viewModel.getMealsByCategory(category: category.strCategory)
+                    if searchTerm.isEmpty {
+                        VStack {
+                                ScrollView(showsIndicators: false) {
+                                    ForEach(viewModel.categories, id:\.self) { category in
+                                        MenuItem(category: category, selectedCategory: $selectedCate)
+                                            .onTapGesture {
+                                                withAnimation(.linear) {
+                                                    selectedCate = category
+                                                }
+                                                Task {
+                                                    await viewModel.getMealsByCategory(category: category.strCategory)
+                                                }
                                             }
                                         }
-                                    }
-                            }
-                    }.padding(.trailing, 10)
-                        .padding(.bottom, 60)
-                        .task {
-                            await viewModel.getMealsByCategory(category: selectedCate.strCategory)
-                        }
+                                }
+                        }.padding(.trailing, 10)
+                            .padding(.bottom, 60)
+                            .task {
+                                await viewModel.getMealsByCategory(category: selectedCate.strCategory)
+                            }.animation(.default, value: searchTerm.isEmpty)
+                    }
                 }
             }.navigationBarHidden(true)
         }

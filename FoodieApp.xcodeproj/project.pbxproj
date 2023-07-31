@@ -15,10 +15,9 @@
 		74287DB32A54CAC80084CF97 /* CustomSwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB22A54CAC80084CF97 /* CustomSwipeCardView.swift */; };
 		74287DB62A5756D90084CF97 /* CartCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB52A5756D90084CF97 /* CartCardViewModel.swift */; };
 		74287DB82A5B0E580084CF97 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DB72A5B0E580084CF97 /* Bundle.swift */; };
-		74287DBD2A5B294A0084CF97 /* FilterMealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */; };
+		74287DBD2A5B294A0084CF97 /* MealCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287DBC2A5B294A0084CF97 /* MealCategories.swift */; };
 		74287DBF2A5B2E060084CF97 /* MealsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 74287DBE2A5B2D070084CF97 /* MealsMock.json */; };
 		742CDE292A69BF9D008CFBF7 /* FoodieEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CDE282A69BF9D008CFBF7 /* FoodieEmptyView.swift */; };
-		742CDE2B2A6C76DB008CFBF7 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CDE2A2A6C76DB008CFBF7 /* CustomAlert.swift */; };
 		74335FCF2A61CEBC00BE680C /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74335FCE2A61CEBC00BE680C /* CartModel.swift */; };
 		74335FD22A61E2CB00BE680C /* MealCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74335FD12A61E2CB00BE680C /* MealCardViewModel.swift */; };
 		749CFADF2A3DBA7D00380161 /* FoodieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CFADE2A3DBA7D00380161 /* FoodieAppApp.swift */; };
@@ -110,11 +109,10 @@
 		74287DB22A54CAC80084CF97 /* CustomSwipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwipeCardView.swift; sourceTree = "<group>"; };
 		74287DB52A5756D90084CF97 /* CartCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCardViewModel.swift; sourceTree = "<group>"; };
 		74287DB72A5B0E580084CF97 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
-		74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMealModel.swift; sourceTree = "<group>"; };
+		74287DBC2A5B294A0084CF97 /* MealCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCategories.swift; sourceTree = "<group>"; };
 		74287DBE2A5B2D070084CF97 /* MealsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MealsMock.json; sourceTree = "<group>"; };
 		74287DC02A5B50390084CF97 /* FilteredMealMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FilteredMealMock.json; sourceTree = "<group>"; };
 		742CDE282A69BF9D008CFBF7 /* FoodieEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieEmptyView.swift; sourceTree = "<group>"; };
-		742CDE2A2A6C76DB008CFBF7 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		74335FCE2A61CEBC00BE680C /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		74335FD12A61E2CB00BE680C /* MealCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCardViewModel.swift; sourceTree = "<group>"; };
 		749CFADB2A3DBA7D00380161 /* FoodieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,7 +308,6 @@
 				74B7D31C2A45A1EE00A43A45 /* LoadableImage.swift */,
 				74B6C9842A4CB7E800882D6B /* StraggledGridView.swift */,
 				742CDE282A69BF9D008CFBF7 /* FoodieEmptyView.swift */,
-				742CDE2A2A6C76DB008CFBF7 /* CustomAlert.swift */,
 			);
 			path = ResuableItems;
 			sourceTree = "<group>";
@@ -379,7 +376,7 @@
 				74335FCD2A61CEAE00BE680C /* Realm */,
 				749CFB5C2A40523B00380161 /* User.swift */,
 				74B7D3172A45957E00A43A45 /* Category.swift */,
-				74287DBC2A5B294A0084CF97 /* FilterMealModel.swift */,
+				74287DBC2A5B294A0084CF97 /* MealCategories.swift */,
 				74287DC02A5B50390084CF97 /* FilteredMealMock.json */,
 				74B6C9762A4763A700882D6B /* Meal.swift */,
 				74287DBE2A5B2D070084CF97 /* MealsMock.json */,
@@ -775,11 +772,10 @@
 				74B6C9902A51C4AA00882D6B /* PortionButton.swift in Sources */,
 				74B6C9882A50309700882D6B /* MealDetailView.swift in Sources */,
 				749CFB532A3F68AD00380161 /* AuthenticationManager.swift in Sources */,
-				74287DBD2A5B294A0084CF97 /* FilterMealModel.swift in Sources */,
+				74287DBD2A5B294A0084CF97 /* MealCategories.swift in Sources */,
 				74B6C9832A4C9A7200882D6B /* Double.swift in Sources */,
 				74287DB62A5756D90084CF97 /* CartCardViewModel.swift in Sources */,
 				74B6C98B2A50A80900882D6B /* CustomFontConstants.swift in Sources */,
-				742CDE2B2A6C76DB008CFBF7 /* CustomAlert.swift in Sources */,
 				749CFB782A41DB4F00380161 /* CategoryCardView.swift in Sources */,
 				749CFB632A41D0F700380161 /* TabBar.swift in Sources */,
 				749CFB1E2A3EF78C00380161 /* CustomTextField.swift in Sources */,

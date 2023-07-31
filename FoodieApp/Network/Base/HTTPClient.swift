@@ -36,8 +36,9 @@ extension HTTPClient {
 //        request.allHTTPHeaderFields = endpoint.header
 
         if let body = endpoint.body {
-            request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-        }
+                request.httpBody = try? JSONEncoder().encode(body)
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            }
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)

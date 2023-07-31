@@ -13,6 +13,7 @@ protocol FoodieServiceable {
 }
 
 class NetworkService: FoodieServiceable, HTTPClient {
+    
     func getMealByCategory(category: String) async throws -> FilterMealModel {
         return try await sendRequest(endpoint: FoodieEndPoints.mealByCategory(category: category), responseModel: FilterMealModel.self)
     }

@@ -20,7 +20,7 @@ struct LoginView: View {
                 .font(.custom(CustomFont.bold,size: 30))
                 .padding(.bottom, 45)
             
-            //            Email password Fields
+            ///            Email password Fields
             CustomTextField(text: $authViewModel.email,
                             placeholder: "Email Address",
                             imgName: .email)
@@ -28,12 +28,12 @@ struct LoginView: View {
             
             CustomTextField(text: $authViewModel.password, placeholder: "Password", imgName: .password, isSecure: true)
             
-            //            Forgot password link test
+            ///          Forgot password link test
             HStack {
                 Spacer()
                 
                 NavigationLink {
-                    //                    ResetPasswordView(email: $email)
+//                                        ResetPasswordView(email: $email)
                 } label: {
                     Text("Forgot password?")
                         .font(.custom(CustomFont.semiBold,size: 14))
@@ -42,11 +42,10 @@ struct LoginView: View {
                 }
                 
             }
-            //            Login Button
+            ///Login Button
             
             Button {
                 authViewModel.login { isUser in
-                    print(isUser)
                     isUser ? session.signIn() : session.logOut()
                 }
             } label: {
@@ -58,7 +57,7 @@ struct LoginView: View {
                     .cornerRadius(10)
             }
             
-            //            Divider
+            ///            Divider
             
             
             HStack {
