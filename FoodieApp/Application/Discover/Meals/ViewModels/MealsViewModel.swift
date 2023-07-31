@@ -10,8 +10,16 @@ extension MealsView {
     @MainActor
     final class MealsViewModel: ObservableObject {
         private var service: NetworkService
-        @Published var meals: [MealCategories] = []
+        
+        private var meals: [MealCategories] = []
         @Published var categories: [CategoryResult] = []
+        @Published var searchtext: String = ""
+        
+        var mealSearchable: [MealCategories] {
+            
+                let query = searchtext.lowercased()
+                return meals.filter { $0.strMeal.contains(query) }
+        }
         
         
         init(service: NetworkService) {
