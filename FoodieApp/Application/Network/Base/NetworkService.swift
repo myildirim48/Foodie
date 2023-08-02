@@ -6,15 +6,17 @@
 //
 
 import Foundation
+
 protocol HTTPClient {
     func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async throws -> T
 }
 
-extension HTTPClient {
+class NetworkService: HTTPClient {
+
     func sendRequest<T: Decodable>(
         endpoint: Endpoint,
         responseModel: T.Type
-    ) async throws -> T {
+    ) async throws -> T{
         var urlComponents = URLComponents()
         urlComponents.scheme = endpoint.scheme
         urlComponents.host = endpoint.host
@@ -25,39 +27,45 @@ extension HTTPClient {
             urlComponents.queryItems = [params]
         }
                 
-        
         guard let url = urlComponents.url else {
-            throw RequestError.invalidURL
+            throw HTTPClientError.invalidURL
         }
-        print(url)
         
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
 //        request.allHTTPHeaderFields = endpoint.header
 
         if let body = endpoint.body {
-                request.httpBody = try? JSONEncoder().encode(body)
+            do {
+                request.httpBody = try JSONEncoder().encode(body)
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            } catch {
+                throw HTTPClientError.unknown
+            }
             }
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
-            guard let response = response as? HTTPURLResponse else {
-                throw RequestError.noResponse
-            }
-            switch response.statusCode {
+                   guard let httpResponse = response as? HTTPURLResponse else {
+                       throw HTTPClientError.noResponse
+                   }
+            
+            switch httpResponse.statusCode {
             case 200...299:
-                guard let decodedResponse = try? JSONDecoder().decode(responseModel, from: data) else {
-                    throw RequestError.decode
+                do {
+                    let decodedResponse = try JSONDecoder().decode(responseModel, from: data)
+                    return decodedResponse
+                    
+                } catch {
+                    throw HTTPClientError.decode
                 }
-                return decodedResponse
             case 401:
-                throw RequestError.unauthorized
+                throw HTTPClientError.unauthorized
             default:
-                throw RequestError.unexpectedStatusCode
+                throw HTTPClientError.unexpectedStatusCode
             }
         } catch {
-            throw RequestError.unknown
+            throw HTTPClientError.unknown
         }
     }
 }

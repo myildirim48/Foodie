@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MealsView: View {
     @State var selectedCate: CategoryResult
-    @StateObject private var viewModel = MealsViewModel(service: NetworkService())
+    @StateObject private var viewModel = MealsViewModel(repository: FoodieRepositoryFactory.makeMainRepository())
     @Binding var showTabbar: Bool
     @State private var searchTerm = ""
     

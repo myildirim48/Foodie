@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DiscoverCategoriesView: View {
 
-    @StateObject private var viewModel = DiscoverCategoriesViewModel(service: NetworkService())
+    @StateObject private var viewModel = DiscoverCategoriesViewModel(repository: FoodieMainRepository(service: NetworkService()))
     @Binding var showTabbar: Bool
     var body: some View {
         NavigationStack {
