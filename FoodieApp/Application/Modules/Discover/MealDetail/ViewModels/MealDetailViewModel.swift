@@ -9,27 +9,29 @@ import Foundation
 import RealmSwift
 
 extension MealDetailView {
-    
-    
     @MainActor
-    final class MealDetailViewModel: ObservableObject {
-        private var service: NetworkService
-        @Published var meal: [String:String?] = [:]
+    class MealDetailViewModel: ObservableObject {
+        private var repository: FoodieDetailRepository
+        
+        @Published var meal = MealDetailData(meal: ["String" : "String"])
         @ObservedResults(CartModel.self) private var cartItems
         @ObservedResults(RealmModel.self) private var favorites
         
-        init(service: NetworkService) {
-            self.service = service
+        init(repository: FoodieDetailRepository) {
+            self.repository = repository
         }
-        
+
 //MARK: - Realm
         func addToFavorites(price:Double) {
             do {
                 let realm = try! Realm()
                 print("User Realm User file location: \(realm.configuration.fileURL!.path)")
-                guard let objectToUpdate = realm.object(ofType: RealmModel.self, forPrimaryKey: id) else {
+                guard let objectToUpdate = realm.object(ofType: RealmModel.self, forPrimaryKey: meal.id) else {
                     
-                    let newCartItem = RealmModel(id: id, name: name, imgUrl: imgUrl, price: price)
+                    let newCartItem = RealmModel(id: meal.id,
+                                                 name: meal.name,
+                                                 imgUrl: meal.imgUrl,
+                                                 price: price)
                     $favorites.append(newCartItem)
                     return
                 }
@@ -48,9 +50,11 @@ extension MealDetailView {
                 do {
                     let realm = try! Realm()
                     print("User Realm User file location: \(realm.configuration.fileURL!.path)")
-                    guard let objectToUpdate = realm.object(ofType: CartModel.self, forPrimaryKey: id) else {
+                    guard let objectToUpdate = realm.object(ofType: CartModel.self, forPrimaryKey: meal.id) else {
                         
-                        let newCartItem = CartModel(id: id,name: name, imgUrl: imgUrl, price: price, quantity: 1)
+                        let newCartItem = CartModel(id: meal.id,
+                                                    name: meal.name,
+                                                    imgUrl: meal.imgUrl, price: price, quantity: 1)
                         $cartItems.append(newCartItem)
                         return
                     }
@@ -69,7 +73,7 @@ extension MealDetailView {
 //MARK: - Fetch data
         func getMaealDetail(id: String) async {
             do {
-                try await meal = service.getMealByID(id: id).meals.first!
+                try await meal = repository.getMealByID(id: id).convertToUIModel()
             } catch {
                 //TODO: - Show error to user
                 print(error.localizedDescription)
@@ -77,46 +81,7 @@ extension MealDetailView {
         }
         
         //MARK: - Data to ui
-        //        Data
-        private func dicToData(type: String) -> String {
-            return (meal[type] ?? "") ?? ""
-        }
-        private var id: String {
-            return dicToData(type: "idMeal")
-        }
-        
-        var name: String {
-            return dicToData(type: "strMeal")
-        }
-        
-        var imgUrl: String {
-            return dicToData(type: "strMealThumb")
-        }
-        
-        var category: String {
-            return dicToData(type: "strCategory")
-        }
-        
-        var area: String {
-            return dicToData(type: "strArea")
-        }
-        
-        var about: String {
-            return dicToData(type: "strInstructions")
-        }
-        
-        var ingreddients: [String] {
-            var data = [String]()
-            
-            for i in 1...20 {
-                let ing = dicToData(type: "strIngredient\(i)")
-                
-                if ing != "" {
-                    data.append(ing)
-                }
-            }
-            return data
-        }
-        
+
     }
+    
 }

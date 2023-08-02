@@ -11,16 +11,16 @@ import SwiftUI
 extension DiscoverCategoriesView {
     @MainActor
     final class DiscoverCategoriesViewModel: ObservableObject {
-        private var service: NetworkService
+        private var repository: FoodieMainRepository
         @Published var categories: [CategoryResult] = []
         
-        init(service: NetworkService) {
-            self.service = service
+        init(repository: FoodieMainRepository) {
+            self.repository = repository
         }
         
         func getCategories() async {
             do {
-                try await categories = service.getCategories().categories
+                try await categories = repository.getCategories().categories
             } catch {
                 //                    TODO : Show error to user
             }

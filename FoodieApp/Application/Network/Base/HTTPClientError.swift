@@ -1,12 +1,12 @@
 //
-//  RequestError.swift
+//  HTTPClientError.swift
 //  FoodieApp
 //
-//  Created by YILDIRIM on 22.06.2023.
+//  Created by YILDIRIM on 2.08.2023.
 //
 
 import Foundation
-enum RequestError: Error {
+enum HTTPClientError: Error {
     case decode
     case invalidURL
     case noResponse

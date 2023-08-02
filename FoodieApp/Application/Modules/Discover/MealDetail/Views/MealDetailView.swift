@@ -14,7 +14,7 @@ struct MealDetailView: View {
     
     @Binding var showTabbar: Bool
     @Environment(\.dismiss) var dismiss
-    @StateObject private var viewModel = MealDetailViewModel(service: NetworkService())
+    @StateObject private var viewModel = MealDetailViewModel(repository: FoodieRepositoryFactory.makeDetailRepository())
     
     private var priceSided: (leftPart: Int, rightPart: Int) {
         get {
@@ -35,7 +35,7 @@ struct MealDetailView: View {
                     portionButtons
                     
                     CustomStepper(value: $quantity, range: 1...10) {
-                        Text(viewModel.name)
+                        Text(viewModel.meal.name)
                     }
                     
                      infoAreaCategory
@@ -105,7 +105,7 @@ struct MealDetailView: View {
         }.padding()
     }
     var imageView: some View {
-        LoadableImage(url: viewModel.imgUrl)
+        LoadableImage(url: viewModel.meal.imgUrl)
             .frame(width: 240, height: 240)
             .clipShape(Circle())
             .shadow(color: .black.opacity(0.2), radius: 10, x: 10, y: 10)
@@ -126,7 +126,7 @@ struct MealDetailView: View {
                     Text("Category")
                         .font(.custom(CustomFont.semiBold, size: 14))
                     
-                    Text(viewModel.category)
+                    Text(viewModel.meal.category)
                         .font(.custom(CustomFont.regular, size: 14))
                 }
             Spacer()
@@ -134,7 +134,7 @@ struct MealDetailView: View {
                     Text("Area")
                         .font(.custom(CustomFont.semiBold, size: 14))
                     
-                    Text(viewModel.area)
+                    Text(viewModel.meal.area)
                         .font(.custom(CustomFont.regular, size: 14))
                 }
             }.padding(.horizontal)
@@ -152,7 +152,7 @@ struct MealDetailView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(viewModel.ingreddients, id: \.self) { ingre in
+                    ForEach(viewModel.meal.ingreddients, id: \.self) { ingre in
                         ingradient(text: ingre)
                     }
                 }.padding(.horizontal,5)
@@ -177,7 +177,7 @@ struct MealDetailView: View {
                 Spacer()
             }
             
-            Text(viewModel.about)
+            Text(viewModel.meal.about)
                 .font(.custom(CustomFont.regular, size: 14))
         }.padding()
     }
